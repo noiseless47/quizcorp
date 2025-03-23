@@ -22,6 +22,14 @@ const merriweather = Merriweather({
 export const metadata: Metadata = {
   title: "RV QuizCorp - RVCE's Premier Quiz Club",
   description: "The official website of RV QuizCorp, the quiz club of R.V. College of Engineering and hosts of Asia's Largest Quiz Fest - UTPT",
+  verification: {
+    google: "MN_2PYyv3GTBEiJzEcNvbqGD-HI_GcnUlMIxZyix8Do",
+  },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({

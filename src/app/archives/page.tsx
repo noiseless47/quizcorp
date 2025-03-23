@@ -34,20 +34,20 @@ export default function Archives() {
           year: 2024,
           title: "UTPT 2024",
           description: "The 19th edition of Under The Peepal Tree featured over 800 participants from across India, with 6 specialized quiz categories and a total prize pool of ₹3 lakhs.",
-          image: "/archives/utpt2023.jpg",
+          image: "/archives/utpt24.jpg",
           winners: ["Team Quizzical Minds (Major Quiz)", "Team BrainStorm (Indi-Genius)", "Team Cognoscenti (Ψ-Biz-Tech)"]
         },
         {
           year: 2024,
           title: "RVPU Quiz 2024",
-          description: "Annual quiz competition for the incoming batch of RVCE students, designed to introduce them to the world of competitive quizzing.",
-          image: "/archives/freshers2023.jpg"
+          description: "RV QuizCorp had the privilege of being invited to conduct an engaging and intellectually stimulating quiz competition for PU 1 and PU 2 students. The event aimed to introduce young minds to the exciting world of competitive quizzing, fostering curiosity and knowledge across various domains. Participants showcased their brilliance in multiple rounds covering general knowledge, current affairs, science, literature, and pop culture, making the competition both thrilling and educational. With enthusiastic participation and intense competition, the quiz successfully ignited a passion for quizzing among pre-university students, paving the way for future quizzing enthusiasts.",
+          image: "/archives/rvpu24.jpg"
         },
         {
-          year: 2024,
+          year: 2024, 
           title: "Freshers' Quiz 2024",
           description: "Annual quiz competition for the incoming batch of RVCE students, designed to introduce them to the world of competitive quizzing.",
-          image: "/archives/freshers2023.jpg"
+          image: "/archives/freshers24.jpg"
         }
       ],
       highlights: [

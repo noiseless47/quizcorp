@@ -17,7 +17,7 @@ export default function Footer() {
                 alt="RV QuizCorp Logo"
                 width={150}
                 height={150}
-                className="rounded-full"
+                className="object-contain"
               />
             </div>
             <p className="text-gray-400 text-lg font-merriweather">

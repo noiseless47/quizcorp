@@ -66,7 +66,7 @@ export default function CustomCursor() {
     <>
       <motion.div
         {...({
-          className: "hidden md:block fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-50",
+          className: "hidden md:block fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-[9999]",
           style: {
             backgroundColor: clicked ? "rgba(243, 109, 33, 0.5)" : "rgba(243, 109, 33, 0.3)",
             border: "2px solid #f36d21"
@@ -80,7 +80,7 @@ export default function CustomCursor() {
       </motion.div>
       <motion.div
         {...({
-          className: "hidden md:block fixed top-0 left-0 w-2 h-2 rounded-full bg-[#f36d21] pointer-events-none z-50",
+          className: "hidden md:block fixed top-0 left-0 w-2 h-2 rounded-full bg-[#f36d21] pointer-events-none z-[9999]",
           variants: cursorVariants,
           animate: linkHovered ? "link" : "default",
           transition: { type: "spring", stiffness: 500, damping: 28 }

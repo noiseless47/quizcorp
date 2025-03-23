@@ -51,13 +51,25 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-screen bg-gray-900 flex items-center">
-        <div className="absolute inset-0 bg-black/30"></div>
+      <section className="relative min-h-screen bg-[#0B1121] flex items-center overflow-hidden">
+        {/* Animated gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0B1121] via-[#142033] to-[#1B2B45] animate-gradient-slow"></div>
         
+        {/* Animated dots pattern */}
+        <div className="absolute inset-0" style={{ 
+          backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0)',
+          backgroundSize: '50px 50px'
+        }}></div>
+
+        {/* Glowing orbs */}
+        <div className="absolute top-20 left-20 w-72 h-72 bg-[#f36d21]/20 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-[#4c8693]/20 rounded-full blur-3xl animate-float-delayed"></div>
+        
+        {/* Content */}
         <div className="container mx-auto px-4 z-20 text-center">
           <div className="max-w-3xl mx-auto">
             <h1 
-              className="text-5xl md:text-7xl font-bold mb-4 font-merriweather motion-fade-in"
+              className="text-5xl md:text-7xl font-bold mb-4 font-merriweather motion-fade-in text-white"
               style={{
                 opacity: 0,
                 animation: 'fadeIn 0.8s forwards'
@@ -72,7 +84,7 @@ export default function Home() {
                 animation: 'fadeIn 0.8s 0.3s forwards'
               }}
             >
-              R V College Of Engineering
+              The Official Quiz Club of R V College Of Engineering
             </h2>
             <p 
               className="text-xl md:text-2xl text-gray-100 mb-10 font-merriweather motion-fade-in"
@@ -92,12 +104,20 @@ export default function Home() {
             >
               <Link 
                 href="/register" 
-                className="bg-[#f36d21] text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-[#d85d18] transition-all duration-300 font-merriweather"
+                className="bg-[#f36d21] text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-[#d85d18] transition-all duration-300 font-merriweather hover:scale-105 transform"
               >
                 Register for UTPT
               </Link>
             </div>
           </div>
+        </div>
+
+        {/* Moving particles */}
+        <div className="absolute inset-0 z-10">
+          <div className="absolute w-4 h-4 bg-[#f36d21] rounded-full top-1/4 left-1/4 animate-float-particle-1"></div>
+          <div className="absolute w-3 h-3 bg-[#4c8693] rounded-full top-3/4 right-1/3 animate-float-particle-2"></div>
+          <div className="absolute w-2 h-2 bg-white/30 rounded-full top-1/2 left-2/3 animate-float-particle-3"></div>
+          <div className="absolute w-5 h-5 bg-[#f36d21]/30 rounded-full bottom-1/4 right-1/4 animate-float-particle-4"></div>
         </div>
       </section>
 
@@ -158,6 +178,38 @@ export default function Home() {
               </svg>
             </Link>
           </div>
+
+          {/* Sponsors */}
+          <div 
+            className="mt-12 flex flex-wrap justify-center items-center gap-12 md:gap-20 motion-slide-up"
+            style={{
+              opacity: 0,
+              transform: 'translateY(20px)',
+              animation: 'slideUp 0.7s 0.6s forwards'
+            }}
+          >
+            {/* Sponsor 1 */}
+            <div className="relative w-48 h-32 bg-white/10 backdrop-blur-sm rounded-lg p-4 flex items-center justify-center">
+              <Image
+                src="/sponsors/sponsor1.png"
+                alt="Sponsor 1"
+                width={180}
+                height={120}
+                className="object-contain"
+              />
+            </div>
+            
+            {/* Sponsor 2 */}
+            <div className="relative w-48 h-32 bg-white/10 backdrop-blur-sm rounded-lg p-4 flex items-center justify-center">
+              <Image
+                src="/sponsors/sponsor2.png"
+                alt="Sponsor 2"
+                width={180}
+                height={120}
+                className="object-contain"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -187,7 +239,7 @@ export default function Home() {
               }}
             >
               <Image
-                src="/about-image.jpg" 
+                src="/about/utpt24.jpg"
                 alt="RV QuizCorp Team" 
                 width={600} 
                 height={450}

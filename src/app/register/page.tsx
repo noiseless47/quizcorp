@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { FaUser, FaEnvelope, FaPhone, FaGraduationCap, FaUsers } from 'react-icons/fa6';
 import { FaUniversity } from 'react-icons/fa';
+import Script from 'next/script';
 
 interface TeamMember {
   name: string;
@@ -14,7 +15,6 @@ interface TeamMember {
 interface FormData {
   teamName: string;
   college: string;
-  branch: string;
   quizType: string;
   experience: string;
   member1: TeamMember;
@@ -25,7 +25,6 @@ interface FormData {
 interface FormErrors {
   teamName?: string;
   college?: string;
-  branch?: string;
   quizType?: string;
   member1?: {
     name?: string;
@@ -44,13 +43,65 @@ interface FormErrors {
   };
 }
 
+interface ModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  message: string;
+}
+
+interface RazorpayResponse {
+  razorpay_payment_id: string;
+  razorpay_order_id: string;
+  razorpay_signature: string;
+}
+
+interface RazorpayOptions {
+  key: string;
+  amount: number;
+  currency: string;
+  name: string;
+  description: string;
+  order_id: string;
+  handler: (response: RazorpayResponse) => void;
+  prefill: {
+    name: string;
+    email: string;
+    contact: string;
+  };
+  theme: {
+    color: string;
+  };
+}
+
+declare global {
+  interface Window {
+    Razorpay: any;
+  }
+}
+
+const Modal: React.FC<ModalProps> = ({ isOpen, onClose, message }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg rounded-lg p-6 z-50">
+      <p className="text-gray-600 mb-4">{message}</p>
+      <button
+        onClick={onClose}
+        className="w-full bg-[#4c8693] text-white px-6 py-2 rounded-lg hover:bg-[#3b697a] transition-all duration-300"
+      >
+        OK
+      </button>
+    </div>
+  );
+};
+
 const QUIZ_TYPES = [
-  { id: 'general', name: 'General Quiz' },
-  { id: 'technical', name: 'Technical Quiz' },
-  { id: 'sports', name: 'Sports Quiz' },
-  { id: 'entertainment', name: 'Entertainment Quiz' },
-  { id: 'business', name: 'Business Quiz' },
-  { id: 'science', name: 'Science Quiz' }
+  { id: 'indi-genius', name: 'Indi-Genius' },
+  { id: 'biz-tech', name: 'Ψ-Biz-Tech' },
+  { id: 'game-theory', name: 'Game Theory' },
+  { id: 'lieut-en-ent', name: 'Lieut-en-ent' },
+  { id: 'major-quiz', name: 'Major Quiz' },
+  { id: 'magnum-open', name: 'Magnum Open' }
 ];
 
 const emptyMember = { name: '', email: '', phone: '' };
@@ -59,7 +110,6 @@ export default function Register() {
   const [formData, setFormData] = useState<FormData>({
     teamName: "",
     college: "",
-    branch: "",
     quizType: "",
     experience: "",
     member1: { ...emptyMember },
@@ -70,6 +120,7 @@ export default function Register() {
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [memberCount, setMemberCount] = useState(1);
+  const [showModal, setShowModal] = useState(false);
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
@@ -80,10 +131,6 @@ export default function Register() {
 
     if (!formData.college.trim()) {
       newErrors.college = "College name is required";
-    }
-
-    if (!formData.branch.trim()) {
-      newErrors.branch = "Branch is required";
     }
 
     if (!formData.quizType) {
@@ -141,9 +188,7 @@ export default function Register() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
+  const initializePayment = async () => {
     if (!validateForm()) {
       return;
     }
@@ -151,17 +196,91 @@ export default function Register() {
     setIsSubmitting(true);
 
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // Here you would typically send the data to your backend
-      console.log('Form submitted:', formData);
+      const orderResponse = await fetch('/api/create-order', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ teamName: formData.teamName }),
+      });
+
+      if (!orderResponse.ok) {
+        const error = await orderResponse.json();
+        throw new Error(error.error || 'Failed to create order');
+      }
+
+      const orderData = await orderResponse.json();
+
+      const options: RazorpayOptions = {
+        key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID!,
+        amount: orderData.amount,
+        currency: orderData.currency,
+        name: "QuizCorp UTPT",
+        description: "Registration Fee",
+        order_id: orderData.orderId,
+        handler: async function (response: RazorpayResponse) {
+          try {
+            const verifyResponse = await fetch('/api/verify-payment', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(response),
+            });
+
+            if (!verifyResponse.ok) {
+              const error = await verifyResponse.json();
+              throw new Error(error.error || 'Payment verification failed');
+            }
+
+            await handleRegistration();
+          } catch (error) {
+            console.error('Payment verification error:', error);
+            alert('Payment verification failed. Please try again.');
+          }
+        },
+        prefill: {
+          name: formData.member1.name,
+          email: formData.member1.email,
+          contact: formData.member1.phone,
+        },
+        theme: {
+          color: "#4c8693",
+        },
+      };
+
+      const razorpay = new window.Razorpay(options);
+      razorpay.open();
+    } catch (error) {
+      console.error('Payment initialization error:', error);
+      alert('Failed to initialize payment. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleRegistration = async () => {
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to submit registration');
+      }
       
       // Reset form
       setFormData({
         teamName: "",
         college: "",
-        branch: "",
         quizType: "",
         experience: "",
         member1: { ...emptyMember },
@@ -170,10 +289,11 @@ export default function Register() {
       });
       setMemberCount(1);
 
-      // Show success message
-      alert("Registration successful! We'll contact you soon.");
+      // Show success modal
+      setShowModal(true);
     } catch (error) {
-      alert("Something went wrong. Please try again later.");
+      alert("Registration failed. Please try again later.");
+      console.error('Registration error:', error);
     } finally {
       setIsSubmitting(false);
     }
@@ -237,6 +357,15 @@ export default function Register() {
 
   return (
     <div className="min-h-screen bg-white">
+      <Script
+        src="https://checkout.razorpay.com/v1/checkout.js"
+        strategy="lazyOnload"
+      />
+      <Modal
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+        message="Registration successful! We'll contact you soon."
+      />
       <div className="max-w-3xl mx-auto px-4 py-24">
         <h1 className="text-4xl font-bold text-center text-gray-900 mb-2">
           Register for UTPT
@@ -246,7 +375,7 @@ export default function Register() {
           Join Asia's Largest Student-Run Quiz Fest. Fill out the form below to register.
         </p>
         
-        <form onSubmit={handleSubmit} className="space-y-8">
+        <form onSubmit={(e) => { e.preventDefault(); initializePayment(); }} className="space-y-8">
           <div className="space-y-6">
             <div>
               <label htmlFor="teamName" className="block text-gray-700 text-lg mb-2">
@@ -299,22 +428,6 @@ export default function Register() {
                 placeholder="Enter your college name"
               />
               {errors.college && <p className="text-red-500 text-sm mt-1">{errors.college}</p>}
-            </div>
-            
-            <div>
-              <label htmlFor="branch" className="block text-gray-700 text-lg mb-2">
-                <FaGraduationCap className="inline-block mr-2" /> Branch
-              </label>
-              <input 
-                type="text" 
-                id="branch"
-                name="branch"
-                value={formData.branch}
-                onChange={handleChange}
-                className={`w-full px-4 py-3 text-black text-base border ${errors.branch ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4c8693]`}
-                placeholder="Enter your branch"
-              />
-              {errors.branch && <p className="text-red-500 text-sm mt-1">{errors.branch}</p>}
             </div>
 
             {/* Team Members Section */}
@@ -492,7 +605,7 @@ export default function Register() {
                 </div>
               )}
             </div>
-            
+
             <div>
               <label htmlFor="experience" className="block text-gray-700 text-lg mb-2">
                 Prior Quiz Experience (if any)
@@ -517,7 +630,7 @@ export default function Register() {
                 isSubmitting ? 'opacity-75 cursor-not-allowed' : ''
               }`}
             >
-              {isSubmitting ? 'Submitting...' : 'Submit Application'}
+              {isSubmitting ? 'Processing...' : 'Pay & Register'}
             </button>
           </div>
         </form>
