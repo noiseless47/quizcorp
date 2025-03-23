@@ -30,7 +30,7 @@ export default function Footer() {
             <h3 className="text-2xl font-bold mb-6 font-merriweather">Connect With Us</h3>
             <div className="flex justify-center space-x-4">
               <a 
-                href="https://www.instagram.com/rvquizcorp/?hl=en" 
+                href="https://www.instagram.com/rvquizcorp/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#E1306C] transition-colors duration-300 group"
@@ -38,7 +38,7 @@ export default function Footer() {
                 <FaInstagram className="w-6 h-6" />
               </a>
               <a 
-                href="https://www.facebook.com" 
+                href="https://www.facebook.com/RvQuizcorp/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#1877F2] transition-colors duration-300 group"
@@ -54,7 +54,7 @@ export default function Footer() {
                 <FaXTwitter className="w-6 h-6" />
               </a>
               <a 
-                href="https://www.linkedin.com" 
+                href="https://www.linkedin.com/company/rv-quizcorp/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#0A66C2] transition-colors duration-300 group"
