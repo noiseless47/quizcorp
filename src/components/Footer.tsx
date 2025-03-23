@@ -20,14 +20,14 @@ export default function Footer() {
                 className="object-contain"
               />
             </div>
-            <p className="text-gray-400 text-lg font-merriweather">
+            <p className="text-gray-400 text-lg font-cookie text-shadow">
               RV QuizCorp is the official quiz club of R.V. College of Engineering, fostering a culture of curiosity and knowledge-sharing through the art of quizzing.
             </p>
           </div>
 
           {/* Second Column - Social Links */}
           <div className="text-center">
-            <h3 className="text-2xl font-bold mb-6 font-merriweather">Connect With Us</h3>
+            <h3 className="text-2xl font-bold mb-6 font-lilita-one">Connect With Us</h3>
             <div className="flex justify-center space-x-4">
               <a 
                 href="https://www.instagram.com/rvquizcorp/" 
@@ -72,7 +72,7 @@ export default function Footer() {
 
           {/* Third Column - Map */}
           <div className="text-center">
-            <h3 className="text-2xl font-bold mb-6 font-merriweather">Visit Us</h3>
+            <h3 className="text-2xl font-bold mb-6 font-lilita-one">Visit Us</h3>
             <div className="relative h-64 rounded-lg overflow-hidden">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.6747340499247!2d77.4986345!3d12.9237228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3ee159cab30d%3A0x771cae2f853a3c8c!2sRV%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1696880069522!5m2!1sen!2sin"
@@ -85,7 +85,7 @@ export default function Footer() {
                 className="rounded-lg"
               ></iframe>
             </div>
-            <p className="mt-4 text-gray-400 font-merriweather">
+            <p className="mt-4 text-gray-400 font-cookie text-lg">
               R.V. College of Engineering<br />
               RV Vidyanikethan Post<br />
               Mysore Road, Bangalore - 560059
@@ -94,7 +94,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400 font-merriweather">
+        <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400 font-cookie text-lg">
           <p>&copy; {new Date().getFullYear()} RV QuizCorp. All rights reserved.</p>
         </div>
       </div>

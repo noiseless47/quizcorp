@@ -13,7 +13,9 @@ export default function Header() {
   const router = useRouter();
   const pathname = usePathname();
   
-  const isHomepage = pathname === "/";
+  // Pages with dark backgrounds that can have transparent headers
+  const darkBackgroundPages = ['/', '/utpt','/sponsorship','/contact'];
+  const isDarkPage = darkBackgroundPages.includes(pathname);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,6 +35,7 @@ export default function Header() {
     { name: "About", href: "/#about" },
     { name: "UTPT", href: "/utpt" },
     { name: "Archives", href: "/archives" },
+    { name: "Gallery", href: "/gallery" },
     { name: "Blog", href: "/blog" },
     { name: "Contact", href: "/contact" },
     { name: "Corp", href: "/team" },
@@ -52,7 +55,8 @@ export default function Header() {
     }
   };
 
-  const isTransparent = isHomepage && !isScrolled;
+  // Only be transparent if on a dark page AND not scrolled
+  const isTransparent = isDarkPage && !isScrolled;
 
   return (
     <header 
@@ -75,7 +79,7 @@ export default function Header() {
                   className="object-contain"
                 />
               </div>
-              <div className="font-bold text-xl font-merriweather">
+              <div className="font-bold text-3xl font-lilita-one">
                 <span className="text-[#f36d21]">Quiz</span>
                 <span className="text-[#4c8693]">Corp</span>
               </div>
@@ -91,7 +95,7 @@ export default function Header() {
                 onClick={(e) => handleNavClick(link.href, e)}
                 className={`${
                   isTransparent ? 'text-white' : 'text-gray-800'
-                } hover:text-[#f36d21] transition-colors font-medium font-merriweather`}
+                } hover:text-[#f36d21] transition-colors font-medium font-lilita-one text-lg`}
               >
                 {link.name}
               </Link>
@@ -102,7 +106,7 @@ export default function Header() {
                 isTransparent 
                   ? 'bg-white text-[#f36d21]' 
                   : 'bg-[#f36d21] text-white'
-              } px-6 py-2 rounded-full hover:shadow-lg transition-all font-medium font-merriweather`}
+              } px-6 py-2 rounded-full hover:shadow-lg transition-all font-medium font-lilita-one`}
             >
               Register for UTPT
             </Link>
@@ -156,7 +160,7 @@ export default function Header() {
                     >
                       <Link 
                         href={link.href}
-                        className="inline-block text-gray-800 hover:text-[#f36d21] transition-colors text-lg font-merriweather py-2"
+                        className="inline-block text-gray-800 hover:text-[#f36d21] transition-colors text-lg font-cookie py-2"
                         onClick={(e) => handleNavClick(link.href, e)}
                       >
                         {link.name}
@@ -171,7 +175,7 @@ export default function Header() {
                   >
                     <Link 
                       href="/register"
-                      className="inline-block bg-[#f36d21] text-white px-6 py-2 rounded-full hover:bg-[#e25d11] transition-all text-lg font-merriweather"
+                      className="inline-block bg-[#f36d21] text-white px-6 py-2 rounded-full hover:bg-[#e15d11] transition-all text-lg font-lilita-one"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       Register for UTPT

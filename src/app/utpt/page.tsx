@@ -21,8 +21,8 @@ export default function UTPT() {
               animation: 'fadeIn 0.6s forwards'
             }}
           >
-            <h1 className="text-5xl font-bold text-white mb-4 font-merriweather">Under The Peepal Tree</h1>
-            <p className="text-2xl text-white/90 max-w-4xl mx-auto font-merriweather">
+            <h1 className="text-5xl font-bold text-white mb-4 font-lilita-one">Under The Peepal Tree</h1>
+            <p className="text-2xl text-white/90 max-w-4xl mx-auto font-cookie text-shadow">
               Asia&apos;s Largest Student-Run Quiz Fest
             </p>
           </div>
@@ -31,7 +31,7 @@ export default function UTPT() {
 
       <section className="py-20">
         <div className="container mx-auto px-8 lg:px-16">
-          <h2 className="text-4xl font-bold mb-12 text-center font-merriweather text-white">
+          <h2 className="text-4xl font-bold mb-12 text-center font-lilita-one text-white">
             About UTPT
           </h2>
           <div
@@ -43,13 +43,13 @@ export default function UTPT() {
             }}
           >
             <div className="bg-white p-8 lg:p-12 rounded-xl shadow-lg">
-              <p className="text-gray-700 mb-6 font-merriweather text-justify">
+              <p className="text-gray-700 mb-6 font-cookie text-justify">
                 Under the Peepal Tree (UTPT) is a quiz fest organized by RV QuizCorp, the quiz club of R.V. College of Engineering. Since its first edition in 2004, it has grown to become one of the most anticipated events in the Indian quizzing calendar.
               </p>
-              <p className="text-gray-700 mb-6 font-merriweather text-justify">
+              <p className="text-gray-700 mb-6 font-cookie text-justify">
                 The name "Under the Peepal Tree" comes from the tradition of knowledge sharing that took place under the sacred Peepal trees in ancient India. Just as those trees witnessed the exchange of wisdom, UTPT provides a platform for the brightest minds to showcase their knowledge.
               </p>
-              <p className="text-gray-700 font-merriweather text-justify">
+              <p className="text-gray-700 font-cookie text-justify">
                 Every year, UTPT attracts participants from all over India, making it Asia&apos;s largest student-run quiz fest. The event showcases the brightest minds in quizzing and draws participation from across the country.
               </p>
             </div>
@@ -59,7 +59,7 @@ export default function UTPT() {
 
       <section className="py-20">
         <div className="container mx-auto px-8 lg:px-16">
-          <h2 className="text-4xl font-bold mb-12 text-center font-merriweather text-white">
+          <h2 className="text-4xl font-bold mb-12 text-center font-lilita-one text-white">
             UTPT Quiz Categories
           </h2>
           <div
@@ -73,12 +73,12 @@ export default function UTPT() {
               {[
                 {
                   title: "Indi-Genius",
-                  description: "If you&apos;re crazy about everything desi, this is the perfect quiz for you. From Ram-Leela to Ramayana, cricket wickets and election tickets, this quiz encompasses everything that makes us say &quot;It only happens in India&quot;.",
+                  description: "If you're crazy about everything desi, this is the perfect quiz for you. From Ram-Leela to Ramayana, cricket wickets and election tickets, this quiz encompasses everything that makes us say \"It only happens in India\".",
                   color: "orange"
                 },
                 {
                   title: "Ψ-Biz-Tech",
-                  description: "Here&apos;s where being a geek will work in your favour. If you switch on the TV only for The Discovery channel, if your magazine subscriptions include the Scientific American and if your favourite board game is Monopoly, get ready to win some serious money in this science, technology and business quiz.",
+                  description: "Here's where being a geek will work in your favour. If you switch on the TV only for The Discovery channel, if your magazine subscriptions include the Scientific American and if your favourite board game is Monopoly, get ready to win some serious money in this science, technology and business quiz.",
                   color: "turkish"
                 },
                 {
@@ -111,8 +111,8 @@ export default function UTPT() {
                     animation: `slideUp 0.6s ${index * 0.1}s forwards`
                   }}
                 >
-                  <h3 className={`text-2xl font-bold mb-4 ${quiz.color === "orange" ? "text-[#f36d21]" : "text-[#4c8693]"} font-merriweather`}>{quiz.title}</h3>
-                  <p className="text-gray-700 font-merriweather">{quiz.description}</p>
+                  <h3 className={`text-2xl font-bold mb-4 ${quiz.color === "orange" ? "text-[#f36d21]" : "text-[#4c8693]"} font-lilita-one`}>{quiz.title}</h3>
+                  <p className="text-gray-700 font-cookie">{quiz.description}</p>
                 </div>
               ))}
             </div>
@@ -128,7 +128,7 @@ export default function UTPT() {
             >
               <Link 
                 href="/register"
-                className="bg-[#f36d21] text-white px-12 py-4 rounded-full hover:bg-[#d85d18] transition-all duration-300 font-merriweather inline-flex items-center text-lg"
+                className="bg-[#f36d21] text-white px-12 py-4 rounded-full hover:bg-[#d85d18] transition-all duration-300 font-lilita-one inline-flex items-center text-lg"
               >
                 Register for UTPT
               </Link>

@@ -7,6 +7,23 @@
   --secondary: #4c8693;
 }
 
+/* Font classes for Cookie and Lilita One */
+.font-cookie {
+  font-family: 'Cookie', cursive !important;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  font-size: 1.6em;
+}
+
+.font-lilita {
+  font-family: 'Lilita One', cursive !important;
+  font-weight: 400;
+}
+
+.text-shadow {
+  text-shadow: none;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -31,6 +48,10 @@ body {
 
 .font-merriweather {
   font-family: var(--font-merriweather);
+}
+
+.font-lilita-one {
+  font-family: var(--font-lilita-one);
 }
 
 .hide-default-cursor, 

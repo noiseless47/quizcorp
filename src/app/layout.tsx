@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Merriweather } from "next/font/google";
+import { Cookie, Lilita_One } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -16,6 +17,18 @@ const inter = Inter({
 const merriweather = Merriweather({
   weight: ['300', '400', '700', '900'],
   variable: "--font-merriweather",
+  subsets: ["latin"],
+});
+
+const cookie = Cookie({
+  weight: ['400'],
+  variable: "--font-cookie",
+  subsets: ["latin"],
+});
+
+const lilitaOne = Lilita_One({
+  weight: ['400'],
+  variable: "--font-lilita-one",
   subsets: ["latin"],
 });
 
@@ -40,7 +53,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.variable} ${merriweather.variable} antialiased`}
+        className={`${inter.variable} ${merriweather.variable} ${cookie.variable} ${lilitaOne.variable} antialiased`}
       >
         <ThemeProvider>
           <ParticleBackground />
