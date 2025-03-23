@@ -185,6 +185,46 @@ export default function Register() {
     }
 
     setErrors(newErrors);
+    
+    // If there are errors, scroll to the first error
+    if (Object.keys(newErrors).length > 0) {
+      setTimeout(() => {
+        // Find the first error field
+        let firstErrorField: HTMLElement | null = null;
+        
+        if (newErrors.teamName) {
+          firstErrorField = document.getElementById('teamName');
+        } else if (newErrors.quizType) {
+          firstErrorField = document.getElementById('quizType');
+        } else if (newErrors.college) {
+          firstErrorField = document.getElementById('college');
+        } else if (newErrors.member1?.name) {
+          firstErrorField = document.getElementById('member1.name');
+        } else if (newErrors.member1?.email) {
+          firstErrorField = document.getElementById('member1.email');
+        } else if (newErrors.member1?.phone) {
+          firstErrorField = document.getElementById('member1.phone');
+        } else if (newErrors.member2?.name) {
+          firstErrorField = document.getElementById('member2.name');
+        } else if (newErrors.member2?.email) {
+          firstErrorField = document.getElementById('member2.email');
+        } else if (newErrors.member2?.phone) {
+          firstErrorField = document.getElementById('member2.phone');
+        } else if (newErrors.member3?.name) {
+          firstErrorField = document.getElementById('member3.name');
+        } else if (newErrors.member3?.email) {
+          firstErrorField = document.getElementById('member3.email');
+        } else if (newErrors.member3?.phone) {
+          firstErrorField = document.getElementById('member3.phone');
+        }
+        
+        if (firstErrorField) {
+          firstErrorField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          firstErrorField.focus();
+        }
+      }, 100);
+    }
+    
     return Object.keys(newErrors).length === 0;
   };
 
@@ -397,20 +437,27 @@ export default function Register() {
               <label htmlFor="quizType" className="block text-gray-700 text-lg mb-2 font-cookie text-xl text-shadow">
                 Quiz Type
               </label>
-              <select
-                id="quizType"
-                name="quizType"
-                value={formData.quizType}
-                onChange={handleChange}
-                className={`w-full px-4 py-3 text-black text-base border ${errors.quizType ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4c8693] bg-white font-cookie`}
-              >
-                <option value="">Select a quiz type</option>
-                {QUIZ_TYPES.map(quiz => (
-                  <option key={quiz.id} value={quiz.id}>
-                    {quiz.name}
-                  </option>
-                ))}
-              </select>
+              <div className="relative">
+                <select
+                  id="quizType"
+                  name="quizType"
+                  value={formData.quizType}
+                  onChange={handleChange}
+                  className={`w-full px-4 py-3 text-black text-base border ${errors.quizType ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4c8693] bg-white font-cookie appearance-none`}
+                >
+                  <option value="">Select a quiz type</option>
+                  {QUIZ_TYPES.map(quiz => (
+                    <option key={quiz.id} value={quiz.id}>
+                      {quiz.name}
+                    </option>
+                  ))}
+                </select>
+                <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                  <svg className="w-5 h-5 text-[#f36d21]" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path>
+                  </svg>
+                </div>
+              </div>
               {errors.quizType && <p className="text-red-500 text-sm mt-1 font-cookie">{errors.quizType}</p>}
             </div>
             
