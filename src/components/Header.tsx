@@ -14,7 +14,7 @@ export default function Header() {
   const pathname = usePathname();
   
   // Pages with dark backgrounds that can have transparent headers
-  const darkBackgroundPages = ['/', '/utpt','/sponsorship','/contact'];
+  const darkBackgroundPages = ['/', '/utpt','/sponsorship','/contact','/gallery'];
   const isDarkPage = darkBackgroundPages.includes(pathname);
 
   useEffect(() => {
