@@ -21,7 +21,7 @@ export default function Contact() {
       <div className="container mx-auto px-6 md:px-12 lg:px-16">
         {/* Page Title */}
         <h1 
-          className="text-4xl md:text-5xl font-bold text-white text-center mb-12 font-lilita-one motion-fade-in"
+          className="text-4xl md:text-5xl font-bold text-white text-center mb-12 font-jockey-one motion-fade-in"
           style={{
             opacity: 0,
             animation: 'fadeIn 0.7s forwards'
@@ -41,7 +41,7 @@ export default function Contact() {
         >
           <div className="grid lg:grid-cols-2">
             <div className="p-8 sm:p-12">
-              <h2 className="text-3xl font-bold mb-8 text-gray-800 font-lilita-one">Find Us</h2>
+              <h2 className="text-3xl font-bold mb-8 text-gray-800 font-jockey-one">Find Us</h2>
               <div className="space-y-6">
                 <div className="flex items-start">
                   <div className="bg-[#f36d21] p-3 rounded-full text-white mr-4">
@@ -51,8 +51,8 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-800 mb-1 font-lilita-one">Address</h3>
-                    <p className="text-lg text-gray-600 font-cookie text-shadow">
+                    <h3 className="text-xl font-semibold text-gray-800 mb-1 font-jockey-one">Address</h3>
+                    <p className="text-lg text-gray-600 font-itim text-shadow">
                       R.V. College of Engineering<br />
                       Mysore Road, R.V. Vidyanikethan Post<br />
                       Bengaluru - 560059, Karnataka, India
@@ -67,11 +67,11 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-800 mb-1 font-lilita-one">Email</h3>
-                    <a href="mailto:utpt.rvquizcorp@gmail.com" className="text-lg text-[#4c8693] hover:underline font-cookie text-shadow">
+                    <h3 className="text-xl font-semibold text-gray-800 mb-1 font-jockey-one">Email</h3>
+                    <a href="mailto:utpt.rvquizcorp@gmail.com" className="text-lg text-[#4c8693] hover:underline font-itim text-shadow">
                       utpt.rvquizcorp@gmail.com
                     </a>
-                    <p className="text-gray-600 mt-1 font-cookie text-shadow">For event inquiries and collaborations</p>
+                    <p className="text-gray-600 mt-1 font-itim text-shadow">For event inquiries and collaborations</p>
                   </div>
                 </div>
                 
@@ -82,10 +82,10 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-800 mb-1 font-lilita-one">Contact</h3>
-                    <p className="text-lg text-gray-600 font-cookie text-shadow">
-                      Aditya (QuizCorp President): +91 98765 43210<br />
-                      Sneha (UTPT Coordinator): +91 98765 12345
+                    <h3 className="text-xl font-semibold text-gray-800 mb-1 font-jockey-one">Contact</h3>
+                    <p className="text-lg text-gray-600 font-itim text-shadow">
+                      Shashank Shenoy (QuizCorp President): +91 98765 43210<br />
+                      Tanmay Umesh (QuizCorp President): +91 98765 12345
                     </p>
                   </div>
                 </div>
@@ -93,7 +93,7 @@ export default function Contact() {
               
               {/* Social Media buttons added here */}
               <div className="mt-8">
-                <h3 className="text-xl font-semibold text-gray-800 mb-4 font-lilita-one">Connect With Us</h3>
+                <h3 className="text-xl font-semibold text-gray-800 mb-4 font-jockey-one">Connect With Us</h3>
                 <div className="flex flex-wrap gap-4">
                   {socialLinks.map((link, index) => (
                     <a

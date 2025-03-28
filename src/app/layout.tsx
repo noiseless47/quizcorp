@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Merriweather } from "next/font/google";
-import { Cookie, Lilita_One } from "next/font/google";
+import { Itim, Jockey_One } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from '../context/ThemeContext';
 import ParticleBackground from '@/components/ParticleBackground';
-import CustomCursor from '@/components/CustomCursor';
+import Navbar from "@/components/Navbar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,15 +19,15 @@ const merriweather = Merriweather({
   subsets: ["latin"],
 });
 
-const cookie = Cookie({
+const itim = Itim({
   weight: ['400'],
-  variable: "--font-cookie",
+  variable: "--font-itim",
   subsets: ["latin"],
 });
 
-const lilitaOne = Lilita_One({
+const jockeyOne = Jockey_One({
   weight: ['400'],
-  variable: "--font-lilita-one",
+  variable: "--font-jockey-one",
   subsets: ["latin"],
 });
 
@@ -39,26 +38,57 @@ export const metadata: Metadata = {
     google: "MN_2PYyv3GTBEiJzEcNvbqGD-HI_GcnUlMIxZyix8Do",
   },
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/favicon.ico',
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+    other: {
+      rel: 'apple-touch-icon',
+      url: '/logo.png',
+    },
+  },
+  manifest: '/manifest.json',
+  openGraph: {
+    title: "RV QuizCorp - RVCE's Premier Quiz Club",
+    description: "The official website of RV QuizCorp, the quiz club of R.V. College of Engineering and hosts of Asia's Largest Quiz Fest - UTPT",
+    url: 'https://quizcorp.vercel.app',
+    siteName: 'RV QuizCorp',
+    images: [
+      {
+        url: '/logo.png',
+        width: 800,
+        height: 800,
+        alt: 'RV QuizCorp Logo',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "RV QuizCorp - RVCE's Premier Quiz Club",
+    description: "The official website of RV QuizCorp, the quiz club of R.V. College of Engineering and hosts of Asia's Largest Quiz Fest - UTPT",
+    images: ['/logo.png'],
+    creator: '@rvquizcorp',
+    site: '@rvquizcorp',
   },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
+      </head>
       <body
-        className={`${inter.variable} ${merriweather.variable} ${cookie.variable} ${lilitaOne.variable} antialiased`}
+        className={`${inter.variable} ${merriweather.variable} ${itim.variable} ${jockeyOne.variable} antialiased`}
       >
         <ThemeProvider>
           <ParticleBackground />
-          <CustomCursor />
-          <Header />
+          <Navbar />
           <main>{children}</main>
           <Footer />
         </ThemeProvider>

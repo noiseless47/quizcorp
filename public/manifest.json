@@ -1,0 +1,21 @@
+{
+  "name": "RV QuizCorp",
+  "short_name": "QuizCorp",
+  "description": "The official website of RV QuizCorp, the quiz club of R.V. College of Engineering",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#f36d21",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+} 

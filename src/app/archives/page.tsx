@@ -159,8 +159,8 @@ export default function Archives() {
                 animation: 'fadeInUp 0.6s forwards'
               }}
             >
-              <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6 font-merriweather">RV QuizCorp Archives</h1>
-              <p className="text-xl text-white/90 max-w-4xl mx-auto font-merriweather">
+              <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6 font-jockey-one">RV QuizCorp Archives</h1>
+              <p className="text-xl text-white/90 max-w-4xl mx-auto font-itim text-shadow">
                 A journey through our history of quizzing excellence
               </p>
             </div>
@@ -176,7 +176,7 @@ export default function Archives() {
               <button
                 key={data.year}
                 onClick={() => setSelectedYear(data.year)}
-                className={`px-6 py-3 rounded-full font-merriweather transition-all hover:scale-105 active:scale-95 ${
+                className={`px-6 py-3 rounded-full font-itim transition-all hover:scale-105 active:scale-95 ${
                   selectedYear === data.year 
                     ? 'bg-[#4c8693] text-white shadow-md'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -200,7 +200,7 @@ export default function Archives() {
               animation: 'fadeIn 0.6s forwards'
             }}
           >
-            <h2 className="text-3xl font-bold mb-8 text-gray-900 font-merriweather text-center">
+            <h2 className="text-3xl font-bold mb-8 text-gray-900 font-jockey-one text-center">
               {currentYearData.year} Highlights
             </h2>
             <div className="bg-[#f36d21]/10 p-8 rounded-xl shadow-sm">
@@ -218,7 +218,7 @@ export default function Archives() {
                     <svg className="w-5 h-5 text-[#f36d21] mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <span className="text-gray-700 font-merriweather text-lg">{highlight}</span>
+                    <span className="text-gray-700 font-itim text-lg text-shadow">{highlight}</span>
                   </li>
                 ))}
               </ul>
@@ -234,7 +234,7 @@ export default function Archives() {
             animation: 'fadeIn 0.8s forwards'
           }}
         >
-          <h2 className="text-3xl font-bold mb-12 text-gray-900 font-merriweather text-center">
+          <h2 className="text-3xl font-bold mb-12 text-gray-900 font-jockey-one text-center">
             Events from {currentYearData.year}
           </h2>
 
@@ -259,15 +259,15 @@ export default function Archives() {
                   />
                 </div>
                 <div className="md:w-2/3">
-                  <h3 className="text-2xl font-bold mb-4 text-[#4c8693] font-merriweather">{event.title}</h3>
-                  <p className="text-gray-700 mb-6 font-merriweather text-justify">{event.description}</p>
+                  <h3 className="text-2xl font-bold mb-4 text-[#4c8693] font-jockey-one">{event.title}</h3>
+                  <p className="text-gray-700 mb-6 font-itim text-justify">{event.description}</p>
                   
                   {event.winners && (
                     <div className="mt-6">
-                      <h4 className="text-xl font-semibold mb-4 text-[#f36d21] font-merriweather">Winners</h4>
+                      <h4 className="text-xl font-semibold mb-4 text-[#f36d21] font-jockey-one">Winners</h4>
                       <ul className="space-y-2">
                         {event.winners.map((winner, idx) => (
-                          <li key={idx} className="text-gray-700 font-merriweather flex items-center">
+                          <li key={idx} className="text-gray-700 font-itim flex items-center">
                             <svg className="w-5 h-5 text-[#f36d21] mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                             </svg>
@@ -285,13 +285,13 @@ export default function Archives() {
 
         {/* Call to Action */}
         <div className="text-center mt-20">
-          <p className="text-gray-700 mb-6 text-xl font-merriweather">
+          <p className="text-gray-700 mb-6 text-xl font-itim">
             Want to be part of our future archives? Join RV QuizCorp today!
           </p>
           <div className="hover:scale-105 active:scale-95 transition-transform">
             <Link 
               href="/register"
-              className="bg-[#f36d21] text-white px-12 py-4 rounded-full hover:bg-[#d85d18] transition-all duration-300 font-merriweather inline-block text-lg"
+              className="bg-[#f36d21] text-white px-12 py-4 rounded-full hover:bg-[#d85d18] transition-all duration-300 font-jockey-one inline-block text-lg"
             >
               Register for UTPT
             </Link>

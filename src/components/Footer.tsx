@@ -20,15 +20,23 @@ export default function Footer() {
                 className="object-contain"
               />
             </div>
-            <p className="text-gray-400 text-lg font-cookie text-shadow">
+            <p className="text-gray-400 text-lg font-itim text-shadow mb-6">
               RV QuizCorp is the official quiz club of R.V. College of Engineering, fostering a culture of curiosity and knowledge-sharing through the art of quizzing.
             </p>
+            <div className="text-gray-400 font-itim">
+              <p className="mb-2">
+                <a href="mailto:utpt.rvquizcorp@gmail.com" className="hover:text-[#f36d21] transition-colors">
+                  utpt.rvquizcorp@gmail.com
+                </a>
+              </p>
+              <p>+91 98765 43210</p>
+            </div>
           </div>
 
           {/* Second Column - Social Links */}
           <div className="text-center">
-            <h3 className="text-2xl font-bold mb-6 font-lilita-one">Connect With Us</h3>
-            <div className="flex justify-center space-x-4">
+            <h3 className="text-2xl font-bold mb-6 font-jockey-one">Connect With Us</h3>
+            <div className="flex justify-center space-x-4 mb-8">
               <a 
                 href="https://www.instagram.com/rvquizcorp/" 
                 target="_blank" 
@@ -68,11 +76,58 @@ export default function Footer() {
                 <FaEnvelope className="w-6 h-6" />
               </a>
             </div>
+
+            {/* Quick Links */}
+            <div className="text-center">
+              <h4 className="text-lg font-semibold mb-3 font-jockey-one">Quick Links</h4>
+              <ul className="space-y-2 text-gray-400 font-itim">
+                <li>
+                  <Link href="/utpt" className="hover:text-[#f36d21] transition-colors">
+                    UTPT
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/register" className="hover:text-[#f36d21] transition-colors">
+                    Register
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/sponsorship" className="hover:text-[#f36d21] transition-colors">
+                    Sponsor Us
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="hover:text-[#f36d21] transition-colors">
+                    Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/terms" className="hover:text-[#f36d21] transition-colors">
+                    Terms & Conditions
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/refund" className="hover:text-[#f36d21] transition-colors">
+                    Refund Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/about" className="hover:text-[#f36d21] transition-colors">
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/privacy" className="hover:text-[#f36d21] transition-colors">
+                    Privacy Policy
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
 
           {/* Third Column - Map */}
           <div className="text-center">
-            <h3 className="text-2xl font-bold mb-6 font-lilita-one">Visit Us</h3>
+            <h3 className="text-2xl font-bold mb-6 font-jockey-one">Visit Us</h3>
             <div className="relative h-64 rounded-lg overflow-hidden">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.6747340499247!2d77.4986345!3d12.9237228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3ee159cab30d%3A0x771cae2f853a3c8c!2sRV%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1696880069522!5m2!1sen!2sin"
@@ -85,7 +140,7 @@ export default function Footer() {
                 className="rounded-lg"
               ></iframe>
             </div>
-            <p className="mt-4 text-gray-400 font-cookie text-lg">
+            <p className="mt-4 text-gray-400 font-itim text-lg">
               R.V. College of Engineering<br />
               RV Vidyanikethan Post<br />
               Mysore Road, Bangalore - 560059
@@ -94,7 +149,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400 font-cookie text-lg">
+        <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400 font-itim text-lg">
           <p>&copy; {new Date().getFullYear()} RV QuizCorp. All rights reserved.</p>
         </div>
       </div>

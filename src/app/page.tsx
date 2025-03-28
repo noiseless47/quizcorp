@@ -16,7 +16,7 @@ interface TimeLeft {
 
 export default function Home() {
   const calculateTimeLeft = (): TimeLeft => {
-    const difference = +new Date('2025-06-05') - +new Date();
+    const difference = +new Date('2025-05-25') - +new Date();
     
     // Default values
     let timeLeft: TimeLeft = {
@@ -69,7 +69,7 @@ export default function Home() {
         <div className="container mx-auto px-4 z-20 text-center">
           <div className="max-w-3xl mx-auto">
             <h1 
-              className="text-5xl md:text-7xl font-bold mb-4 font-lilita-one motion-fade-in text-white"
+              className="text-5xl md:text-7xl font-bold mb-4 font-jockey-one motion-fade-in text-white"
               style={{
                 opacity: 0,
                 animation: 'fadeIn 0.8s forwards'
@@ -78,7 +78,7 @@ export default function Home() {
               R V <span className="text-[#f36d21]">Quiz</span><span className="text-[#4c8693]">Corp</span>
             </h1>
             <h2
-              className="text-3xl md:text-4xl font-semibold text-white mb-6 font-lilita-one motion-fade-in"
+              className="text-3xl md:text-4xl font-semibold text-white mb-6 font-jockey-one motion-fade-in"
               style={{
                 opacity: 0,
                 animation: 'fadeIn 0.8s 0.3s forwards'
@@ -87,7 +87,7 @@ export default function Home() {
               The Official Quiz Club of <br /> R V College Of Engineering
             </h2>
             <p 
-              className="text-xl md:text-2xl text-gray-100 mb-10 font-cookie motion-fade-in text-shadow"
+              className="text-xl md:text-2xl text-gray-100 mb-10 font-itim motion-fade-in text-shadow"
               style={{
                 opacity: 0,
                 animation: 'fadeIn 0.8s 0.4s forwards'
@@ -104,7 +104,7 @@ export default function Home() {
             >
               <Link 
                 href="/register" 
-                className="bg-[#f36d21] text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-[#d85d18] transition-all duration-300 font-lilita-one hover:scale-105 transform"
+                className="bg-[#f36d21] text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-[#d85d18] transition-all duration-300 font-jockey-one hover:scale-105 transform"
               >
                 Register for UTPT
               </Link>
@@ -125,7 +125,7 @@ export default function Home() {
       <section className="py-16 bg-[#4c8693] text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 
-            className="text-3xl md:text-4xl font-bold mb-8 font-lilita-one motion-fade-in"
+            className="text-3xl md:text-4xl font-bold mb-8 font-jockey-one motion-fade-in"
             style={{
               opacity: 0,
               animation: 'fadeIn 0.5s forwards'
@@ -143,20 +143,20 @@ export default function Home() {
             }}
           >
             <div className="bg-[#3EB1C8] rounded-xl w-32 h-32 flex flex-col items-center justify-center shadow-lg">
-              <span className="text-4xl font-bold font-lilita-one">{timeLeft.days}</span>
-              <span className="text-sm opacity-80 mt-2 font-cookie text-lg">Days</span>
+              <span className="text-4xl font-bold font-jockey-one">{timeLeft.days}</span>
+              <span className="text-sm opacity-80 mt-2 font-itim text-lg">Days</span>
             </div>
             <div className="bg-[#3EB1C8] rounded-xl w-32 h-32 flex flex-col items-center justify-center shadow-lg">
-              <span className="text-4xl font-bold font-lilita-one">{timeLeft.hours}</span>
-              <span className="text-sm opacity-80 mt-2 font-cookie text-lg">Hours</span>
+              <span className="text-4xl font-bold font-jockey-one">{timeLeft.hours}</span>
+              <span className="text-sm opacity-80 mt-2 font-itim text-lg">Hours</span>
             </div>
             <div className="bg-[#3EB1C8] rounded-xl w-32 h-32 flex flex-col items-center justify-center shadow-lg">
-              <span className="text-4xl font-bold font-lilita-one">{timeLeft.minutes}</span>
-              <span className="text-sm opacity-80 mt-2 font-cookie text-lg">Minutes</span>
+              <span className="text-4xl font-bold font-jockey-one">{timeLeft.minutes}</span>
+              <span className="text-sm opacity-80 mt-2 font-itim text-lg">Minutes</span>
             </div>
             <div className="bg-[#3EB1C8] rounded-xl w-32 h-32 flex flex-col items-center justify-center shadow-lg">
-              <span className="text-4xl font-bold font-lilita-one">{timeLeft.seconds}</span>
-              <span className="text-sm opacity-80 mt-2 font-cookie text-lg">Seconds</span>
+              <span className="text-4xl font-bold font-jockey-one">{timeLeft.seconds}</span>
+              <span className="text-sm opacity-80 mt-2 font-itim text-lg">Seconds</span>
             </div>
           </div>
           
@@ -170,7 +170,7 @@ export default function Home() {
           >
             <Link 
               href="/utpt"
-              className="inline-flex items-center bg-white text-[#4CC3D9] px-8 py-3 rounded-full hover:bg-gray-100 transition-all duration-300 font-medium font-lilita-one"
+              className="inline-flex items-center bg-white text-[#4CC3D9] px-8 py-3 rounded-full hover:bg-gray-100 transition-all duration-300 font-medium font-jockey-one"
             >
               Learn About UTPT
               <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -223,8 +223,8 @@ export default function Home() {
               animation: 'fadeIn 0.7s forwards'
             }}
           >
-            <h2 className="text-4xl font-bold mb-4 text-white font-lilita-one">About Us</h2>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto font-cookie text-shadow">
+            <h2 className="text-4xl font-bold mb-4 text-white font-jockey-one">About Us</h2>
+            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto font-itim text-shadow">
               RV QuizCorp is the official quiz club of R.V. College of Engineering
             </p>
           </div>
@@ -254,25 +254,25 @@ export default function Home() {
                 animation: 'slideIn 0.6s forwards'
               }}
             >
-              <h3 className="text-2xl font-bold mb-6 text-white font-lilita-one">Our Story</h3>
-              <p className="text-gray-300 mb-6 font-cookie text-xl md:text-2xl text-justify text-shadow">
+              <h3 className="text-2xl font-bold mb-6 text-white font-jockey-one">Our Story</h3>
+              <p className="text-gray-300 mb-6 font-itim text-xl md:text-2xl text-justify text-shadow">
                 Founded in 1997, RV QuizCorp has grown to become one of India's premier collegiate quizzing institutions. What started as a small group of quiz enthusiasts has evolved into an organization that hosts Asia's largest student-run quiz fest - Under The Peepal Tree (UTPT).
               </p>
-              <p className="text-gray-300 mb-8 font-cookie text-xl md:text-2xl text-justify text-shadow">
+              <p className="text-gray-300 mb-8 font-itim text-xl md:text-2xl text-justify text-shadow">
                 Our mission is to foster a culture of curiosity, knowledge-sharing, and intellectual stimulation through the art of quizzing. We believe that quizzing is not just a competitive activity but a tool for learning and personal growth.
               </p>
               <div className="grid grid-cols-3 gap-6">
                 <div className="bg-gray-800 p-6 rounded-lg text-center">
-                  <h4 className="text-xl font-bold mb-2 text-white font-lilita-one">25+</h4>
-                  <p className="text-gray-400 font-cookie text-lg">Years of Legacy</p>
+                  <h4 className="text-xl font-bold mb-2 text-white font-jockey-one">25+</h4>
+                  <p className="text-gray-400 font-itim text-lg">Years of Legacy</p>
                 </div>
                 <div className="bg-gray-800 p-6 rounded-lg text-center">
-                  <h4 className="text-xl font-bold mb-2 text-white font-lilita-one">1000+</h4>
-                  <p className="text-gray-400 font-cookie text-lg">Annual Participants</p>
+                  <h4 className="text-xl font-bold mb-2 text-white font-jockey-one">1000+</h4>
+                  <p className="text-gray-400 font-itim text-lg">Annual Participants</p>
                 </div>
                 <div className="bg-gray-800 p-6 rounded-lg text-center">
-                  <h4 className="text-xl font-bold mb-2 text-white font-lilita-one">50+</h4>
-                  <p className="text-gray-400 font-cookie text-lg">Events Organized</p>
+                  <h4 className="text-xl font-bold mb-2 text-white font-jockey-one">50+</h4>
+                  <p className="text-gray-400 font-itim text-lg">Events Organized</p>
                 </div>
               </div>
             </div>
@@ -290,8 +290,8 @@ export default function Home() {
               animation: 'fadeIn 0.7s forwards'
             }}
           >
-            <h2 className="text-4xl font-bold mb-6 text-gray-900 font-lilita-one">Sponsor UTPT</h2>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto font-cookie text-shadow">
+            <h2 className="text-4xl font-bold mb-6 text-gray-900 font-jockey-one">Sponsor UTPT</h2>
+            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto font-itim text-shadow">
               Partner with Asia&apos;s largest student-run quiz fest
             </p>
           </div>
@@ -306,25 +306,25 @@ export default function Home() {
               }}
             >
               <div className="bg-white p-8 lg:p-12 rounded-xl shadow-lg">
-                <h3 className="text-2xl font-bold mb-8 text-[#4c8693] font-lilita-one text-center">Why Sponsor UTPT?</h3>
+                <h3 className="text-2xl font-bold mb-8 text-[#4c8693] font-jockey-one text-center">Why Sponsor UTPT?</h3>
                 <ul className="space-y-6">
                   <li className="flex items-start justify-center">
                     <svg className="w-6 h-6 text-[#f36d21] mr-4 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <span className="text-gray-700 text-xl font-cookie text-shadow">Reach 1000+ students from top institutions across India</span>
+                    <span className="text-gray-700 text-xl font-itim text-shadow">Reach 1000+ students from top institutions across India</span>
                   </li>
                   <li className="flex items-start justify-center">
                     <svg className="w-6 h-6 text-[#f36d21] mr-4 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <span className="text-gray-700 text-xl font-cookie text-shadow">Associate with one of India&apos;s most prestigious quiz events</span>
+                    <span className="text-gray-700 text-xl font-itim text-shadow">Associate with one of India&apos;s most prestigious quiz events</span>
                   </li>
                   <li className="flex items-start justify-center">
                     <svg className="w-6 h-6 text-[#f36d21] mr-4 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <span className="text-gray-700 text-xl font-cookie text-shadow">Customized sponsorship packages available</span>
+                    <span className="text-gray-700 text-xl font-itim text-shadow">Customized sponsorship packages available</span>
                   </li>
                 </ul>
               </div>
@@ -334,7 +334,7 @@ export default function Home() {
           <div className="text-center mt-20">
             <Link 
               href="/sponsorship"
-              className="bg-[#f36d21] text-white px-12 py-4 rounded-full hover:bg-[#d85d18] transition-all duration-300 font-lilita-one inline-block text-lg"
+              className="bg-[#f36d21] text-white px-12 py-4 rounded-full hover:bg-[#d85d18] transition-all duration-300 font-jockey-one inline-block text-lg"
             >
               Become a Sponsor
             </Link>

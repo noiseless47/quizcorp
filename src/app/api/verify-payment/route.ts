@@ -1,32 +1,52 @@
 import { NextResponse } from 'next/server';
-import crypto from 'crypto';
 
-export async function POST(request: Request) {
+export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url);
+  const orderId = searchParams.get('order_id');
+
+  if (!orderId) {
+    return NextResponse.json(
+      { error: 'Order ID is required' },
+      { status: 400 }
+    );
+  }
+
   try {
-    const body = await request.json();
-    const { razorpay_order_id, razorpay_payment_id, razorpay_signature } = body;
+    // Call Cashfree API to get payment status
+    const response = await fetch(`https://api.cashfree.com/pg/orders/${orderId}/payments`, {
+      method: 'GET',
+      headers: {
+        'x-client-id': process.env.CASHFREE_APP_ID!,
+        'x-client-secret': process.env.CASHFREE_SECRET_KEY!,
+        'Accept': 'application/json',
+        'x-api-version': '2025-01-01'
+      }
+    });
 
-    // Verify the payment signature
-    const text = `${razorpay_order_id}|${razorpay_payment_id}`;
-    const signature = crypto
-      .createHmac('sha256', process.env.RAZORPAY_KEY_SECRET!)
-      .update(text)
-      .digest('hex');
+    const data = await response.json();
+    console.log('Payment verification response:', data);
 
-    const isAuthentic = signature === razorpay_signature;
-
-    if (isAuthentic) {
-      return NextResponse.json({
-        verified: true,
-        payment_id: razorpay_payment_id,
-        order_id: razorpay_order_id,
-      });
-    } else {
+    if (!response.ok) {
       return NextResponse.json(
-        { error: 'Invalid payment signature' },
-        { status: 400 }
+        { error: data.message || 'Failed to verify payment' },
+        { status: response.status }
       );
     }
+
+    // Determine payment status as shown in the example
+    let orderStatus;
+    if (data.filter((transaction: any) => transaction.payment_status === "SUCCESS").length > 0) {
+      orderStatus = "Success";
+    } else if (data.filter((transaction: any) => transaction.payment_status === "PENDING").length > 0) {
+      orderStatus = "Pending";
+    } else {
+      orderStatus = "Failure";
+    }
+
+    return NextResponse.json({
+      status: orderStatus,
+      orderId: orderId
+    });
   } catch (error) {
     console.error('Error verifying payment:', error);
     return NextResponse.json(

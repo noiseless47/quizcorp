@@ -8,8 +8,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        cookie: ['var(--font-cookie)', 'cursive'],
-        lilita: ['var(--font-lilita)', 'cursive'],
+        itim: ['var(--font-itim)', 'cursive'],
+        'jockey-one': ['var(--font-jockey-one)', 'cursive'],
       },
       animation: {
         'gradient-slow': 'gradient 15s ease infinite',

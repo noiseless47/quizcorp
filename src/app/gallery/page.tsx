@@ -56,7 +56,7 @@ export default function Gallery() {
       <div className="container mx-auto px-6 md:px-8 lg:px-16 max-w-7xl">
         {/* Page Title */}
         <motion.h1 
-          className="text-4xl md:text-5xl font-bold text-white text-center mb-8 font-lilita-one"
+          className="text-4xl md:text-5xl font-bold text-white text-center mb-8 font-jockey-one"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -77,7 +77,7 @@ export default function Gallery() {
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 text-2xl font-cookie text-shadow ${
+                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 text-2xl font-itim text-shadow ${
                   selectedCategory === category
                     ? 'bg-[#f36d21] text-white'
                     : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
@@ -99,7 +99,7 @@ export default function Gallery() {
               <button
                 key={year}
                 onClick={() => setSelectedYear(year)}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 text-2xl font-cookie text-shadow ${
+                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 text-2xl font-itim text-shadow ${
                   selectedYear === year
                     ? 'bg-[#4c8693] text-white'
                     : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
@@ -143,7 +143,7 @@ export default function Gallery() {
               >
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                   <motion.h3 
-                    className="text-2xl font-bold mb-3 font-lilita-one"
+                    className="text-2xl font-bold mb-3 font-jockey-one"
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: hoveredItem === item.id ? 0 : 20, opacity: hoveredItem === item.id ? 1 : 0 }}
                     transition={{ duration: 0.3 }}
@@ -151,7 +151,7 @@ export default function Gallery() {
                     {item.title}
                   </motion.h3>
                   <motion.p
-                    className="text-2xl text-gray-200 font-cookie text-shadow"
+                    className="text-2xl text-gray-200 font-itim text-shadow"
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: hoveredItem === item.id ? 0 : 20, opacity: hoveredItem === item.id ? 1 : 0 }}
                     transition={{ duration: 0.3, delay: 0.1 }}
@@ -167,7 +167,7 @@ export default function Gallery() {
         {/* Empty State */}
         {filteredItems.length === 0 && (
           <motion.div 
-            className="text-center text-gray-400 py-12 font-cookie text-shadow"
+            className="text-center text-gray-400 py-12 font-itim text-shadow"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
