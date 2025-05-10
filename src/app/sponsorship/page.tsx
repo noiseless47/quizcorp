@@ -47,14 +47,11 @@ export default function Sponsorship() {
     "Possibility of a seminar by the company on RVCE's premises"
   ];
 
-  // Previous sponsors logos (for demo - replace with actual sponsor images)
+  // Previous sponsors logos
   const previousSponsors = [
-    { name: "TechCorp", logo: "/sponsors/sponsor1.png" },
-    { name: "GlobalBank", logo: "/sponsors/sponsor2.png" },
-    { name: "InnovateX", logo: "/sponsors/sponsor3.png" },
-    { name: "MediaGroup", logo: "/sponsors/sponsor4.png" },
-    { name: "EduNetwork", logo: "/sponsors/sponsor5.png" },
-    { name: "FutureTech", logo: "/sponsors/sponsor6.png" }
+    { name: "SIUK", logo: "/sponsor/siuk.png" },
+    { name: "TechCorp", logo: "/sponsor/techcorp.png" },
+    { name: "GlobalBank", logo: "/sponsor/globalbank.png" }
   ];
 
   return (
@@ -229,18 +226,18 @@ export default function Sponsorship() {
               </p>
               
               <div className="flex flex-col md:flex-row gap-6 items-center justify-center mb-10">
-                <div className="flex items-center bg-white/80 px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300">
+                <a href="mailto:utpt.rvquizcorp@gmail.com" className="flex items-center bg-white/80 px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:bg-white">
                   <svg className="w-5 h-5 text-[#4CC3D9] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                   </svg>
-                  <span className="text-gray-700 font-itim text-lg">sponsors.utpt@rvquizcorp.com</span>
-                </div>
-                <div className="flex items-center bg-white/80 px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300">
+                  <span className="text-gray-700 font-itim text-lg hover:text-[#4c8693]">utpt.rvquizcorp@gmail.com</span>
+                </a>
+                <a href="tel:+917981151147" className="flex items-center bg-white/80 px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:bg-white">
                   <svg className="w-5 h-5 text-[#f36d21] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                   </svg>
-                  <span className="text-gray-700 font-itim text-lg">+91 98765 43210</span>
-                </div>
+                  <span className="text-gray-700 font-itim text-lg hover:text-[#4c8693]">+91 79811 51147</span>
+                </a>
               </div>
               
               <div className="text-center">
@@ -269,7 +266,7 @@ export default function Sponsorship() {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gray-900 font-jockey-one text-center">Our Previous Sponsors</h2>
             
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               {previousSponsors.map((sponsor, index) => (
                 <motion.div
                   key={index}
@@ -277,7 +274,7 @@ export default function Sponsorship() {
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center h-24 transform hover:scale-105"
+                  className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center h-32 transform hover:scale-105"
                 >
                   <div className="relative w-full h-full">
                     <div className="absolute inset-0 bg-gray-200 animate-pulse rounded"></div>

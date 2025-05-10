@@ -15,11 +15,11 @@ export async function POST(request: Request) {
     // Generate a unique order ID
     const orderId = `order_${Date.now()}_${Math.floor(Math.random() * 1000)}`;
 
-    // Create order data with optimized settings for mobile
+    // Simplified order data according to documentation
     const orderData = {
+      order_id: orderId,
       order_amount: 150.00,
       order_currency: "INR",
-      order_id: orderId,
       customer_details: {
         customer_id: `cust_${Date.now()}`,
         customer_name: teamName,
@@ -27,25 +27,18 @@ export async function POST(request: Request) {
         customer_phone: "8474090589"
       },
       order_meta: {
-        return_url: "https://quizcorp.vercel.app/payment-success?order_id={order_id}",
-        notify_url: "https://quizcorp.vercel.app/api/cashfree-webhook",
-        payment_methods: "cc,dc,upi,nb,app",
-        order_note: "UTPT Registration Fee"
-      },
-      order_tags: {
-        team_name: teamName
+        return_url: "https://quizcorp.vercel.app/payment-success?order_id={order_id}"
       }
     };
 
     console.log('Creating Cashfree order with data:', orderData);
 
-    // Call Cashfree API with exact headers as shown in the example
+    // Call Cashfree API exactly as in documentation
     const response = await fetch('https://api.cashfree.com/pg/orders', {
       method: 'POST',
       headers: {
         'x-client-id': process.env.CASHFREE_APP_ID!,
         'x-client-secret': process.env.CASHFREE_SECRET_KEY!,
-        'Accept': 'application/json',
         'Content-Type': 'application/json',
         'x-api-version': '2025-01-01'
       },

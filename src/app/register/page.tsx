@@ -239,29 +239,16 @@ export default function Register() {
         throw new Error('Missing payment session ID');
       }
 
-      // Initialize Cashfree SDK - exactly as in the example
+      // Simplified initialization based on Cashfree documentation
       const cashfree = window.Cashfree({
         mode: "production"
       });
 
-      // Configure checkout - exactly as in the example with added theme options
-      let checkoutOptions = {
+      // Simplified checkout options per documentation
+      cashfree.checkout({
         paymentSessionId: orderData.paymentSessionId,
-        redirectTarget: "_self",
-        theme: {
-          color: "#4c8693", // Primary color matching your site
-          errorColor: "#f36d21", // Error color
-          logo: "https://raw.githubusercontent.com/rv-quizcorp/quizcorp.github.io/main/img/logo.png" // Your logo
-        },
-        components: {
-          order: {
-            merchantName: "RV QuizCorp" // Your merchant name
-          }
-        }
-      };
-      
-      // Open the checkout
-      cashfree.checkout(checkoutOptions);
+        redirectTarget: "_self"
+      });
       
     } catch (error) {
       console.error('Payment initialization error:', error);
@@ -368,10 +355,6 @@ export default function Register() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Script
-        src="https://checkout.razorpay.com/v1/checkout.js"
-        strategy="lazyOnload"
-      />
       <Modal
         isOpen={showModal}
         onClose={() => setShowModal(false)}
