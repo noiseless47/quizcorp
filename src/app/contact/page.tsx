@@ -84,8 +84,9 @@ export default function Contact() {
                   <div>
                     <h3 className="text-xl font-semibold text-gray-800 mb-1 font-jockey-one">Contact</h3>
                     <p className="text-lg text-gray-600 font-itim text-shadow">
-                      Shashank Shenoy (QuizCorp President): +91 98765 43210<br />
-                      Tanmay Umesh (QuizCorp President): +91 98765 12345
+                      Shashank Shenoy (President): +91 98765 43210<br />
+                      Tanmay Umesh (President): +91 98765 12345<br />
+                      Tarun Bhupathi (Treasurer): +91 7676331078
                     </p>
                   </div>
                 </div>
