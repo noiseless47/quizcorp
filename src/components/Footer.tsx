@@ -29,7 +29,9 @@ export default function Footer() {
                   utpt.rvquizcorp@gmail.com
                 </a>
               </p>
-              <p>+91 98765 43210</p>
+              <p>
+                <a href="tel:+919448417237" className="hover:text-[#4c8693] transition-colors">+91 94484 17237</a>
+              </p>
             </div>
           </div>
 

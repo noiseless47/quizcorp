@@ -629,9 +629,9 @@ export default function Register() {
             <p className="text-gray-700 mb-4 font-itim text-xl text-shadow">
               The registration fee for UTPT 2025 is ₹150 per team. Payment will be processed securely through Cashfree.
             </p>
-            <p className="text-gray-800 font-itim text-lg text-shadow">
-              <span className="font-bold">Note:</span> You will be redirected to complete payment after submitting this form. Registration is only complete after successful payment.
-            </p>
+              <p className="text-gray-800 font-itim text-lg text-shadow">
+                <span className="font-bold">Note:</span> You will be redirected to complete payment after submitting this form. Registration is only complete after successful payment.
+              </p>
           </div>
           
           <div className="text-center">

@@ -84,9 +84,9 @@ export default function Contact() {
                   <div>
                     <h3 className="text-xl font-semibold text-gray-800 mb-1 font-jockey-one">Contact</h3>
                     <p className="text-lg text-gray-600 font-itim text-shadow">
-                      Shashank Shenoy (President): <a href="tel:+919876543210" className="hover:text-[#4c8693] hover:underline">+91 98765 43210</a><br />
-                      Tanmay Umesh (President): <a href="tel:+919876512345" className="hover:text-[#4c8693] hover:underline">+91 98765 12345</a><br />
-                      Tarun Bhupathi (Treasurer): <a href="tel:+917676331078" className="hover:text-[#4c8693] hover:underline">+91 7676331078</a>
+                      Shashank Shenoy (President): <a href="tel:+919448417237" className="hover:text-[#4c8693] transition-colors">+91 94484 17237</a><br />
+                      Tanmay Umesh (President): <a href="tel:+918296032694" className="hover:text-[#4c8693] transition-colors">+91 82960 32694</a><br />
+                      Tarun Bhupathi (Treasurer): <a href="tel:+917676331078" className="hover:text-[#4c8693] transition-colors">+91 76763 31078</a>
                     </p>
                   </div>
                 </div>

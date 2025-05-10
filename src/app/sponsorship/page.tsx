@@ -50,8 +50,7 @@ export default function Sponsorship() {
   // Previous sponsors logos
   const previousSponsors = [
     { name: "SIUK", logo: "/sponsor/siuk.png" },
-    { name: "TechCorp", logo: "/sponsor/techcorp.png" },
-    { name: "GlobalBank", logo: "/sponsor/globalbank.png" }
+    { name: "FES", logo: "/sponsor/fes.jpg" }
   ];
 
   return (
@@ -266,7 +265,7 @@ export default function Sponsorship() {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gray-900 font-jockey-one text-center">Our Previous Sponsors</h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
               {previousSponsors.map((sponsor, index) => (
                 <motion.div
                   key={index}
@@ -274,7 +273,7 @@ export default function Sponsorship() {
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center h-32 transform hover:scale-105"
+                  className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center h-40 transform hover:scale-105"
                 >
                   <div className="relative w-full h-full">
                     <div className="absolute inset-0 bg-gray-200 animate-pulse rounded"></div>
