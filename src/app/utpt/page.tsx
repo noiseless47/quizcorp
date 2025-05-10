@@ -1,9 +1,44 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 export default function UTPT() {
+  const [showModal, setShowModal] = useState(false);
+  const [modalMessage, setModalMessage] = useState("");
+
+  const handleCategoryClick = (category: string) => {
+    // TODO: Replace with actual PDF links when available
+    const pdfLinks: { [key: string]: string } = {
+      // Add PDF links here when available
+      // Example: "Music": "/pdfs/music-quiz.pdf"
+    };
+
+    if (pdfLinks[category]) {
+      window.open(pdfLinks[category], '_blank');
+    } else {
+      setModalMessage(`${category} quiz will be available soon! Stay tuned for exciting questions!`);
+      setShowModal(true);
+    }
+  };
+
+  // Close modal when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const modal = document.getElementById('modal');
+      if (modal && !modal.contains(event.target as Node)) {
+        setShowModal(false);
+      }
+    };
+
+    if (showModal) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showModal]);
+
   // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -28,6 +63,81 @@ export default function UTPT() {
           </div>
         </div>
       </div>
+
+      {/* Informals Section */}
+      <section className="py-16 bg-gradient-to-b from-[#4c8693]/20 to-transparent">
+        <div className="container mx-auto px-8 lg:px-16">
+          <div
+            className="max-w-4xl mx-auto motion-slide-up"
+            style={{
+              opacity: 0,
+              transform: 'translateY(20px)',
+              animation: 'slideUp 0.6s forwards'
+            }}
+          >
+            <div className="bg-white/10 backdrop-blur-sm p-8 lg:p-12 rounded-xl shadow-lg border border-white/20">
+              <h2 className="text-3xl font-bold mb-2 text-center text-white font-jockey-one">Informals for UTPT 2025</h2>
+              <p className="text-white/90 text-lg font-itim text-shadow text-center mb-8">
+                Explore a variety of informal questions and quizzes to get a taste of UTPT!
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+                {[
+                  { name: "Music", description: "Test your knowledge of melodies, artists, and musical trivia across genres and eras!" },
+                  { name: "Anime", description: "From classic series to the latest releases, prove your anime expertise!" },
+                  { name: "Science-Biz-Tech", description: "Challenge yourself with questions on scientific discoveries, business trends, and tech innovations!" },
+                  { name: "Movies & TV", description: "From blockbuster hits to cult classics, show off your entertainment knowledge!" },
+                  { name: "India", description: "Celebrate Indian culture, history, and achievements through engaging trivia!" },
+                  { name: "Sports", description: "Test your knowledge of sports history, current events, and legendary moments!" }
+                ].map((category, index) => (
+                  <div
+                    key={category.name}
+                    onClick={() => handleCategoryClick(category.name)}
+                    className="bg-white/5 p-6 rounded-lg border border-white/10 hover:bg-white/10 transition-all duration-300 cursor-pointer transform hover:scale-105 flex flex-col h-full"
+                  >
+                    <h3 className={`text-2xl font-bold mb-3 ${index % 2 === 0 ? "text-[#f36d21]" : "text-[#4c8693]"} font-jockey-one`}>
+                      {category.name}
+                    </h3>
+                    <p className="text-white/90 font-itim text-shadow mb-4">
+                      {category.description}
+                    </p>
+                    <div className="mt-auto pt-2 text-right">
+                      <span className="text-white/80 text-sm font-itim">Click to view quiz →</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-8 text-center">
+                <p className="text-white/90 font-itim text-shadow text-lg">
+                  Check back regularly for new questions and updates!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Modal */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
+          <div
+            id="modal"
+            className="bg-white/10 backdrop-blur-md p-8 rounded-xl shadow-lg border border-white/20 max-w-md mx-4 transform transition-all"
+          >
+            <div className="text-center">
+              <h3 className="text-2xl font-bold mb-4 text-white font-jockey-one">Coming Soon!</h3>
+              <p className="text-white/90 font-itim text-lg mb-6">
+                {modalMessage}
+              </p>
+              <button
+                onClick={() => setShowModal(false)}
+                className="bg-[#f36d21] text-white px-8 py-3 rounded-full hover:bg-[#d85d18] transition-all duration-300 font-jockey-one"
+              >
+                Got it!
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       <section className="py-20">
         <div className="container mx-auto px-8 lg:px-16">
