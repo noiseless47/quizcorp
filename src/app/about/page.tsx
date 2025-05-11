@@ -10,23 +10,24 @@ export default function About() {
 
   return (
     <div className="min-h-screen bg-gray-50 py-24">
-      <div className="container mx-auto px-8 lg:px-16">
+      <div className="container mx-auto px-8 lg:px-16 motion-fade-in">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl font-bold mb-8 text-gray-900 font-jockey-one text-center">About RV QuizCorp</h1>
           
           <div className="bg-white rounded-xl shadow-lg p-8 lg:p-12 mb-12">
-            <div className="grid md:grid-cols-2 gap-8 items-center mb-12">
-              <div className="relative h-64 md:h-full">
+            <div className="mb-10">
+              <div className="relative w-full h-64 md:h-96 rounded-lg overflow-hidden">
                 <Image
                   src="/about/utpt24.jpg"
                   alt="RV QuizCorp Team"
                   fill
-                  className="object-cover rounded-lg"
+                  className="object-cover"
+                  style={{ objectPosition: 'center' }}
                 />
               </div>
-              <div className="space-y-4">
-                <h2 className="text-2xl font-bold text-gray-900 font-jockey-one">Our Story</h2>
-                <p className="text-gray-700 font-itim text-lg">
+              <div className="mt-8 text-center">
+                <h2 className="text-2xl font-bold text-gray-900 font-jockey-one mb-4">Our Story</h2>
+                <p className="text-gray-700 font-itim text-lg mb-2">
                   Founded in 1997, RV QuizCorp has grown to become one of India's premier collegiate quizzing institutions. What started as a small group of quiz enthusiasts has evolved into an organization that hosts Asia's largest student-run quiz fest - Under The Peepal Tree (UTPT).
                 </p>
                 <p className="text-gray-700 font-itim text-lg">

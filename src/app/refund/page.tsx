@@ -9,7 +9,7 @@ export default function Refund() {
 
   return (
     <div className="min-h-screen bg-gray-50 py-24">
-      <div className="container mx-auto px-8 lg:px-16">
+      <div className="container mx-auto px-8 lg:px-16 motion-fade-in">
         <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-8 mt-12">
           <h1 className="text-4xl font-bold mb-6 text-[#f36d21] font-jockey-one">Refund Policy</h1>
           <p className="text-lg text-gray-700 mb-6 font-itim">
