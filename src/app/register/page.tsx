@@ -10,6 +10,7 @@ interface TeamMember {
   name: string;
   email: string;
   phone: string;
+  countryCode: string;
 }
 
 interface FormData {
@@ -87,7 +88,7 @@ const QUIZ_TYPES = [
   { id: 'magnum-open', name: 'Magnum Open' }
 ];
 
-const emptyMember = { name: '', email: '', phone: '' };
+const emptyMember = { name: '', email: '', phone: '', countryCode: '+91' };
 
 export default function Register() {
   const [formData, setFormData] = useState<FormData>({
@@ -132,7 +133,7 @@ export default function Register() {
     if (!formData.member1.phone.trim()) {
       newErrors.member1 = { ...newErrors.member1, phone: "Phone number is required" };
     } else if (!/^[0-9]{10}$/.test(formData.member1.phone)) {
-      newErrors.member1 = { ...newErrors.member1, phone: "Invalid phone number" };
+      newErrors.member1 = { ...newErrors.member1, phone: "Phone number must be 10 digits" };
     }
 
     // Only validate member 2 if added
@@ -146,7 +147,7 @@ export default function Register() {
         if (!formData.member2.phone.trim()) {
           newErrors.member2 = { ...newErrors.member2, phone: "Phone number is required if name is provided" };
         } else if (!/^[0-9]{10}$/.test(formData.member2.phone)) {
-          newErrors.member2 = { ...newErrors.member2, phone: "Invalid phone number" };
+          newErrors.member2 = { ...newErrors.member2, phone: "Phone number must be 10 digits" };
         }
       }
     }
@@ -162,7 +163,7 @@ export default function Register() {
         if (!formData.member3.phone.trim()) {
           newErrors.member3 = { ...newErrors.member3, phone: "Phone number is required if name is provided" };
         } else if (!/^[0-9]{10}$/.test(formData.member3.phone)) {
-          newErrors.member3 = { ...newErrors.member3, phone: "Invalid phone number" };
+          newErrors.member3 = { ...newErrors.member3, phone: "Phone number must be 10 digits" };
         }
       }
     }
@@ -478,15 +479,21 @@ export default function Register() {
                   </div>
                   <div>
                     <label htmlFor="member1.phone" className="block text-gray-600 mb-1 font-itim text-lg text-shadow">Phone Number</label>
-                    <input
-                      type="tel"
-                      id="member1.phone"
-                      name="member1.phone"
-                      value={formData.member1.phone}
-                      onChange={handleChange}
-                      className={`w-full px-4 py-3 text-black text-base border ${errors.member1?.phone ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4c8693] font-itim`}
-                      placeholder="+91"
-                    />
+                    <div className="flex">
+                      <div className="flex items-center px-4 py-3 bg-gray-100 border border-r-0 border-gray-300 rounded-l-lg font-itim">
+                        +91
+                      </div>
+                      <input
+                        type="tel"
+                        id="member1.phone"
+                        name="member1.phone"
+                        value={formData.member1.phone}
+                        onChange={handleChange}
+                        maxLength={10}
+                        className={`w-full px-4 py-3 text-black text-base border ${errors.member1?.phone ? 'border-red-500' : 'border-gray-300'} rounded-r-lg focus:outline-none focus:ring-2 focus:ring-[#4c8693] font-itim`}
+                        placeholder="Enter 10-digit number"
+                      />
+                    </div>
                     {errors.member1?.phone && <p className="text-red-500 text-sm mt-1 font-itim">{errors.member1.phone}</p>}
                   </div>
                 </div>
@@ -534,15 +541,21 @@ export default function Register() {
                     </div>
                     <div>
                       <label htmlFor="member2.phone" className="block text-gray-600 mb-1 font-itim text-lg text-shadow">Phone Number</label>
-                      <input
-                        type="tel"
-                        id="member2.phone"
-                        name="member2.phone"
-                        value={formData.member2.phone}
-                        onChange={handleChange}
-                        className={`w-full px-4 py-3 text-black text-base border ${errors.member2?.phone ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4c8693] font-itim`}
-                        placeholder="+91"
-                      />
+                      <div className="flex">
+                        <div className="flex items-center px-4 py-3 bg-gray-100 border border-r-0 border-gray-300 rounded-l-lg font-itim">
+                          +91
+                        </div>
+                        <input
+                          type="tel"
+                          id="member2.phone"
+                          name="member2.phone"
+                          value={formData.member2.phone}
+                          onChange={handleChange}
+                          maxLength={10}
+                          className={`w-full px-4 py-3 text-black text-base border ${errors.member2?.phone ? 'border-red-500' : 'border-gray-300'} rounded-r-lg focus:outline-none focus:ring-2 focus:ring-[#4c8693] font-itim`}
+                          placeholder="Enter 10-digit number"
+                        />
+                      </div>
                       {errors.member2?.phone && <p className="text-red-500 text-sm mt-1 font-itim">{errors.member2.phone}</p>}
                     </div>
                   </div>
@@ -591,15 +604,21 @@ export default function Register() {
                     </div>
                     <div>
                       <label htmlFor="member3.phone" className="block text-gray-600 mb-1 font-itim text-lg text-shadow">Phone Number</label>
-                      <input
-                        type="tel"
-                        id="member3.phone"
-                        name="member3.phone"
-                        value={formData.member3.phone}
-                        onChange={handleChange}
-                        className={`w-full px-4 py-3 text-black text-base border ${errors.member3?.phone ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4c8693] font-itim`}
-                        placeholder="+91"
-                      />
+                      <div className="flex">
+                        <div className="flex items-center px-4 py-3 bg-gray-100 border border-r-0 border-gray-300 rounded-l-lg font-itim">
+                          +91
+                        </div>
+                        <input
+                          type="tel"
+                          id="member3.phone"
+                          name="member3.phone"
+                          value={formData.member3.phone}
+                          onChange={handleChange}
+                          maxLength={10}
+                          className={`w-full px-4 py-3 text-black text-base border ${errors.member3?.phone ? 'border-red-500' : 'border-gray-300'} rounded-r-lg focus:outline-none focus:ring-2 focus:ring-[#4c8693] font-itim`}
+                          placeholder="Enter 10-digit number"
+                        />
+                      </div>
                       {errors.member3?.phone && <p className="text-red-500 text-sm mt-1 font-itim">{errors.member3.phone}</p>}
                     </div>
                   </div>

@@ -19,7 +19,8 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
-    "react-native-cashfree-pg-sdk": "^2.2.0"
+    "react-native-cashfree-pg-sdk": "^2.2.0",
+    "react-phone-input-2": "^2.15.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

@@ -13,6 +13,11 @@ const teamMemberSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  countryCode: {
+    type: String,
+    required: true,
+    default: '+91'
+  },
 });
 
 const registrationSchema = new mongoose.Schema({
