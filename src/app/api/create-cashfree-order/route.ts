@@ -27,7 +27,9 @@ export async function POST(request: Request) {
         customer_phone: "8474090589"
       },
       order_meta: {
-        return_url: "https://quizcorp.vercel.app/payment-success?order_id={order_id}"
+        return_url: process.env.NODE_ENV === "production"
+          ? "https://www.quizcorp.tech/payment-success?order_id={order_id}"
+          : "https://quizcorp.vercel.app/payment-success?order_id={order_id}"
       }
     };
 
