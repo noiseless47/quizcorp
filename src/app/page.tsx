@@ -279,6 +279,14 @@ export default function Home() {
               <p className="text-gray-300 mb-8 font-itim text-xl md:text-2xl text-justify text-shadow">
                 Our mission is to foster a culture of curiosity, knowledge-sharing, and intellectual stimulation through the art of quizzing. We believe that quizzing is not just a competitive activity but a tool for learning and personal growth.
               </p>
+              <div className="mt-6 mb-8">
+                <a href="/about" className="inline-flex items-center bg-[#f36d21] text-white px-8 py-3 rounded-full hover:bg-[#d85d18] transition-colors font-jockey-one text-lg font-bold shadow-lg">
+                  Learn More
+                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  </svg>
+                </a>
+              </div>
               <div className="grid grid-cols-3 gap-6">
                 <div className="bg-gray-800 p-6 rounded-lg text-center">
                   <h4 className="text-xl font-bold mb-2 text-white font-jockey-one">25+</h4>
