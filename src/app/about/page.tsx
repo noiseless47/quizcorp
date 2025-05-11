@@ -65,7 +65,7 @@ export default function About() {
                 <h2 className="text-2xl font-bold mb-4 text-gray-900 font-jockey-one">Our Impact</h2>
                 <div className="grid md:grid-cols-3 gap-6">
                   <div className="bg-gray-50 p-6 rounded-lg">
-                    <h3 className="text-xl font-bold mb-2 text-gray-900 font-jockey-one">1000+</h3>
+                    <h3 className="text-xl font-bold mb-2 text-gray-900 font-jockey-one">10000+</h3>
                     <p className="text-gray-700 font-itim">Students Reached</p>
                   </div>
                   <div className="bg-gray-50 p-6 rounded-lg">

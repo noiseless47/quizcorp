@@ -101,8 +101,12 @@ export default function Privacy() {
                 If you have any questions about this privacy policy, please contact us at:
               </p>
               <p className="mt-2">
-                Email: utpt.rvquizcorp@gmail.com<br />
-                Phone: +91 98765 43210
+                <a href="mailto:utpt.rvquizcorp@gmail.com" className="hover:text-[#f36d21] transition-colors">
+                  Email: utpt.rvquizcorp@gmail.com<br />
+                </a>
+                <a href="tel:+919448417237" className="hover:text-[#4c8693] transition-colors">
+                  Phone: +91 94484 17237
+                </a>
               </p>
             </section>
 

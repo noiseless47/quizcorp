@@ -289,3 +289,22 @@ body {
 .animate-float-particle-4 {
   animation: float-particle-4 20s ease-in-out infinite;
 }
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: inline-block;
+  min-width: 100%;
+  animation: marquee 10s linear infinite;
+}
+
+.announcement-ticker:hover {
+  animation-play-state: paused !important;
+}

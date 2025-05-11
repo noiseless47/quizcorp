@@ -61,11 +61,78 @@ export default function UTPT() {
               Asia&apos;s Largest Student-Run Quiz Fest
             </p>
           </div>
+
+          {/* UTPT 2025 Schedule Section */}
+          <div className="max-w-3xl mx-auto mt-10 mb-16 bg-white/10 backdrop-blur-lg rounded-2xl shadow-2xl p-10 border border-white/30" style={{background: 'linear-gradient(135deg, rgba(76,134,147,0.10) 0%, rgba(243,109,33,0.10) 100%)'}}>
+            <h2 className="text-4xl font-bold text-center text-[#f36d21] mb-8 font-jockey-one drop-shadow-lg">UTPT 2025 Schedule</h2>
+            <div className="space-y-10">
+              {/* May 23 */}
+              <div>
+                <div className="font-bold text-2xl mb-4 text-[#4c8693] text-left font-jockey-one">May 23</div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <button type="button" onClick={() => document.getElementById('indi-genius')?.scrollIntoView({ behavior: 'smooth', block: 'start' })} className="flex items-center gap-4 bg-white/10 rounded-xl p-4 shadow-md hover:bg-[#f36d21]/30 transition cursor-pointer w-full">
+                    <span className="text-3xl">🧭</span>
+                    <div>
+                      <div className="font-bold text-xl text-white font-jockey-one">INDI-GENIUS</div>
+                      <div className="text-sm text-gray-200 font-itim">9 AM</div>
+                    </div>
+                  </button>
+                  <button type="button" onClick={() => document.getElementById('lieut-en-ent')?.scrollIntoView({ behavior: 'smooth', block: 'start' })} className="flex items-center gap-4 bg-white/10 rounded-xl p-4 shadow-md hover:bg-[#f36d21]/30 transition cursor-pointer w-full">
+                    <span className="text-3xl">🎭</span>
+                    <div>
+                      <div className="font-bold text-xl text-white font-jockey-one">LIEUT-EN-ENT</div>
+                      <div className="text-sm text-gray-200 font-itim">2 PM</div>
+                    </div>
+                  </button>
+                </div>
+              </div>
+              {/* May 24 */}
+              <div>
+                <div className="font-bold text-2xl mb-4 text-[#4c8693] text-left font-jockey-one">May 24</div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <button type="button" onClick={() => document.getElementById('game-theory')?.scrollIntoView({ behavior: 'smooth', block: 'start' })} className="flex items-center gap-4 bg-white/10 rounded-xl p-4 shadow-md hover:bg-[#f36d21]/30 transition cursor-pointer w-full">
+                    <span className="text-3xl">🎮</span>
+                    <div>
+                      <div className="font-bold text-xl text-white font-jockey-one">GAME THEORY</div>
+                      <div className="text-sm text-gray-200 font-itim">9 AM</div>
+                    </div>
+                  </button>
+                  <button type="button" onClick={() => document.getElementById('psi-tech')?.scrollIntoView({ behavior: 'smooth', block: 'start' })} className="flex items-center gap-4 bg-white/10 rounded-xl p-4 shadow-md hover:bg-[#f36d21]/30 transition cursor-pointer w-full">
+                    <span className="text-3xl">⚛️</span>
+                    <div>
+                      <div className="font-bold text-xl text-white font-jockey-one">Ψ-TECH</div>
+                      <div className="text-sm text-gray-200 font-itim">2 PM</div>
+                    </div>
+                  </button>
+                </div>
+              </div>
+              {/* May 25 */}
+              <div>
+                <div className="font-bold text-2xl mb-4 text-[#4c8693] text-left font-jockey-one">May 25</div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <button type="button" onClick={() => document.getElementById('magnum-open')?.scrollIntoView({ behavior: 'smooth', block: 'start' })} className="flex items-center gap-4 bg-white/10 rounded-xl p-4 shadow-md hover:bg-[#f36d21]/30 transition cursor-pointer w-full">
+                    <span className="text-3xl">🔫</span>
+                    <div>
+                      <div className="font-bold text-xl text-white font-jockey-one">MAGNUM OPEN</div>
+                      <div className="text-sm text-gray-200 font-itim">9 AM</div>
+                    </div>
+                  </button>
+                  <button type="button" onClick={() => document.getElementById('major-quiz')?.scrollIntoView({ behavior: 'smooth', block: 'start' })} className="flex items-center gap-4 bg-white/10 rounded-xl p-4 shadow-md hover:bg-[#f36d21]/30 transition cursor-pointer w-full">
+                    <span className="text-3xl">🎖️</span>
+                    <div>
+                      <div className="font-bold text-xl text-white font-jockey-one">MAJOR QUIZ</div>
+                      <div className="text-sm text-gray-200 font-itim">2 PM</div>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Informals Section */}
-      <section className="py-16 bg-gradient-to-b from-[#4c8693]/20 to-transparent">
+      <section className="py-16 bg-black">
         <div className="container mx-auto px-8 lg:px-16">
           <div
             className="max-w-4xl mx-auto motion-slide-up"
@@ -75,7 +142,7 @@ export default function UTPT() {
               animation: 'slideUp 0.6s forwards'
             }}
           >
-            <div className="bg-white/10 backdrop-blur-sm p-8 lg:p-12 rounded-xl shadow-lg border border-white/20">
+            <div className="p-8 lg:p-12 rounded-xl shadow-lg border border-white/20">
               <h2 className="text-3xl font-bold mb-2 text-center text-white font-jockey-one">Informals for UTPT 2025</h2>
               <p className="text-white/90 text-lg font-itim text-shadow text-center mb-8">
                 Explore a variety of informal questions and quizzes to get a taste of UTPT!
@@ -214,12 +281,13 @@ export default function UTPT() {
               ].map((quiz, index) => (
                 <div
                   key={index}
-                  className="bg-white p-8 rounded-xl shadow hover:shadow-lg transition-all duration-300 motion-slide-up"
+                  className="bg-white p-8 rounded-xl shadow hover:shadow-lg transition-all duration-300 motion-slide-up scroll-mt-28"
                   style={{
                     opacity: 0,
                     transform: 'translateY(20px)',
                     animation: `slideUp 0.6s ${index * 0.1}s forwards`
                   }}
+                  id={`${quiz.title.toLowerCase().replace(/\s+/g, '-')}`}
                 >
                   <h3 className={`text-2xl font-bold mb-4 ${quiz.color === "orange" ? "text-[#f36d21]" : "text-[#4c8693]"} font-jockey-one`}>{quiz.title}</h3>
                   <p className="text-gray-700 font-itim">{quiz.description}</p>

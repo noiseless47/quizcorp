@@ -27,9 +27,9 @@ export default function Refund() {
                 For event registrations, the following refund policy applies:
               </p>
               <ul className="list-disc pl-6 mt-2 space-y-2">
-                <li>Full refund available up to 7 days before the event</li>
-                <li>50% refund available between 7 days and 24 hours before the event</li>
-                <li>No refunds available within 24 hours of the event</li>
+                <li>Full refund available up to 24 hours before the event</li>
+                <li>50% refund available between 24 hours and before the event</li>
+                <li>No refunds available during the event</li>
                 <li>Refunds will be processed within 5-7 business days</li>
               </ul>
             </section>
@@ -65,7 +65,7 @@ export default function Refund() {
                 The following items are non-refundable:
               </p>
               <ul className="list-disc pl-6 mt-2 space-y-2">
-                <li>Event merchandise already shipped</li>
+                <li>Event merchandise already printed</li>
                 <li>Processing fees</li>
                 <li>Donations</li>
                 <li>Special event packages with non-refundable components</li>
@@ -78,8 +78,12 @@ export default function Refund() {
                 For any questions regarding our refund policy, please contact us at:
               </p>
               <p className="mt-2">
-                Email: utpt.rvquizcorp@gmail.com<br />
-                Phone: +91 98765 43210
+                <a href="mailto:utpt.rvquizcorp@gmail.com" className="hover:text-[#f36d21] transition-colors">
+                  Email: utpt.rvquizcorp@gmail.com<br />
+                </a>
+                <a href="tel:+917676331078" className="hover:text-[#4c8693] transition-colors">
+                  Phone: +91 76763 31078
+                </a>
               </p>
             </section>
           </div>

@@ -76,7 +76,7 @@ export default function Terms() {
               </p>
               <p className="mt-2">
                 Email: utpt.rvquizcorp@gmail.com<br />
-                Phone: +91 98765 43210
+                Phone: +91 94484 17237
               </p>
             </section>
           </div>

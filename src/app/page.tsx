@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo3D from "@/components/Logo3D";
 import MiniQuiz from "@/components/MiniQuiz";
+import React from "react";
 
 // Define interface for timeLeft object
 interface TimeLeft {
@@ -121,6 +122,23 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Announcement Ticker */}
+      <div className="w-full bg-[#f36d21] py-2 overflow-hidden relative z-30">
+        <div className="whitespace-nowrap animate-marquee text-white font-bold text-lg font-itim flex items-center announcement-ticker">
+          {/* Repeat the announcement set 4 times for a full ticker, no inner flex */}
+          {[...Array(4)].map((_, i) => (
+            <React.Fragment key={i}>
+              <span key={`dates-${i}`} className="mr-8">📢 Dates of UTPT 2025 revealed: 23, 24, 25 May 2025</span>
+              <span key={`sep1-${i}`} className="mx-8">|</span>
+              <span key={`sched1-${i}`} className="mr-8">📢 Schedule of UTPT revealed!{' '}<Link href="/utpt" className="underline hover:text-gray-200 transition-colors">Click for more details.</Link></span>
+              <span key={`sep2-${i}`} className="mx-8">|</span>
+              <span key={`sched2-${i}`} className="mr-8">Registration for UTPT 2025 will start soon! Stay tuned for more details.</span>
+              <span key={`sep3-${i}`} className="mx-8">|</span>
+            </React.Fragment>
+          ))}
+        </div>
+      </div>
+
       {/* Countdown Timer Section */}
       <section className="py-16 bg-[#4c8693] text-white">
         <div className="container mx-auto px-4 text-center">
@@ -131,7 +149,7 @@ export default function Home() {
               animation: 'fadeIn 0.5s forwards'
             }}
           >
-            UTPT 2025 Coming Soon
+            Countdown to UTPT 2025
           </h2>
           
           <div 
