@@ -480,7 +480,7 @@ export default function Register() {
                   <div>
                     <label htmlFor="member1.phone" className="block text-gray-600 mb-1 font-itim text-lg text-shadow">Phone Number</label>
                     <div className="flex">
-                      <div className="flex items-center px-4 py-3 bg-gray-100 border border-r-0 border-gray-300 rounded-l-lg font-itim">
+                      <div className="flex items-center px-4 py-3 bg-gray-100 border border-r-0 border-gray-300 rounded-l-lg font-itim text-black">
                         +91
                       </div>
                       <input
@@ -491,7 +491,7 @@ export default function Register() {
                         onChange={handleChange}
                         maxLength={10}
                         className={`w-full px-4 py-3 text-black text-base border ${errors.member1?.phone ? 'border-red-500' : 'border-gray-300'} rounded-r-lg focus:outline-none focus:ring-2 focus:ring-[#4c8693] font-itim`}
-                        placeholder="Enter 10-digit number"
+                        placeholder="Enter number"
                       />
                     </div>
                     {errors.member1?.phone && <p className="text-red-500 text-sm mt-1 font-itim">{errors.member1.phone}</p>}
@@ -542,7 +542,7 @@ export default function Register() {
                     <div>
                       <label htmlFor="member2.phone" className="block text-gray-600 mb-1 font-itim text-lg text-shadow">Phone Number</label>
                       <div className="flex">
-                        <div className="flex items-center px-4 py-3 bg-gray-100 border border-r-0 border-gray-300 rounded-l-lg font-itim">
+                        <div className="flex items-center px-4 py-3 bg-gray-100 border border-r-0 border-gray-300 rounded-l-lg font-itim text-black">
                           +91
                         </div>
                         <input
@@ -605,7 +605,7 @@ export default function Register() {
                     <div>
                       <label htmlFor="member3.phone" className="block text-gray-600 mb-1 font-itim text-lg text-shadow">Phone Number</label>
                       <div className="flex">
-                        <div className="flex items-center px-4 py-3 bg-gray-100 border border-r-0 border-gray-300 rounded-l-lg font-itim">
+                        <div className="flex items-center px-4 py-3 bg-gray-100 border border-r-0 border-gray-300 rounded-l-lg font-itim text-black">
                           +91
                         </div>
                         <input
