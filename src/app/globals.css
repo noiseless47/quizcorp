@@ -302,7 +302,7 @@ body {
 .animate-marquee {
   display: inline-block;
   min-width: 100%;
-  animation: marquee 10s linear infinite;
+  animation: marquee 12s linear infinite;
 }
 
 .announcement-ticker:hover {
