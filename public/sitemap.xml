@@ -74,7 +74,7 @@
 
   <!-- Home Page -->
   <url>
-    <loc>https://quizcorp.tech/</loc>
+    <loc>https://www.quizcorp.tech/</loc>
     <lastmod>2024-03-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -82,7 +82,7 @@
 
   <!-- UTPT Page -->
   <url>
-    <loc>https://quizcorp.tech/utpt</loc>
+    <loc>https://www.quizcorp.tech/utpt</loc>
     <lastmod>2024-03-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -90,7 +90,7 @@
 
   <!-- Registration Page -->
   <url>
-    <loc>https://quizcorp.tech/register</loc>
+    <loc>https://www.quizcorp.tech/register</loc>
     <lastmod>2024-03-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -98,7 +98,7 @@
 
   <!-- Sponsorship Page -->
   <url>
-    <loc>https://quizcorp.tech/sponsorship</loc>
+    <loc>https://www.quizcorp.tech/sponsorship</loc>
     <lastmod>2024-03-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -106,7 +106,7 @@
 
   <!-- Archives Page -->
   <url>
-    <loc>https://quizcorp.tech/archives</loc>
+    <loc>https://www.quizcorp.tech/archives</loc>
     <lastmod>2024-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -114,7 +114,7 @@
 
   <!-- Gallery Page -->
   <url>
-    <loc>https://quizcorp.tech/gallery</loc>
+    <loc>https://www.quizcorp.tech/gallery</loc>
     <lastmod>2024-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -122,7 +122,7 @@
 
   <!-- Blog Page -->
   <url>
-    <loc>https://quizcorp.tech/blog</loc>
+    <loc>https://www.quizcorp.tech/blog</loc>
     <lastmod>2024-03-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -130,7 +130,7 @@
 
   <!-- Contact Page -->
   <url>
-    <loc>https://quizcorp.tech/contact</loc>
+    <loc>https://www.quizcorp.tech/contact</loc>
     <lastmod>2024-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -138,7 +138,7 @@
 
   <!-- Team Page -->
   <url>
-    <loc>https://quizcorp.tech/team</loc>
+    <loc>https://www.quizcorp.tech/team</loc>
     <lastmod>2024-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
