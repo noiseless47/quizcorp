@@ -6,7 +6,6 @@ import { FaUniversity } from 'react-icons/fa';
 
 // Replace this with your actual Razorpay payment link
 const RAZORPAY_LINK = "https://rzp.io/rzp/W2SbBBS";
-const MAGNUM_OPEN_FORM = "https://forms.gle/XvTfUVeQMhgHoBM59";
 
 export default function Register() {
   return (
@@ -57,27 +56,14 @@ export default function Register() {
             </p>
           </div>
           
-          <div className="space-y-4">
-            <a 
-              href={RAZORPAY_LINK} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="bg-[#f36d21] text-white px-8 py-4 text-xl rounded-lg hover:bg-[#d85d18] transition-all duration-300 font-jockey-one inline-block w-full md:w-auto"
-            >
-              Register Now
-            </a>
-            
-            <div className="pt-4">
-              <a 
-                href={MAGNUM_OPEN_FORM} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="bg-[#4c8693] text-white px-8 py-4 text-xl rounded-lg hover:bg-[#3b697a] transition-all duration-300 font-jockey-one inline-block w-full md:w-auto"
-              >
-                Register for Magnum Open
-              </a>
-            </div>
-          </div>
+          <a 
+            href={RAZORPAY_LINK} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-[#f36d21] text-white px-8 py-4 text-xl rounded-lg hover:bg-[#d85d18] transition-all duration-300 font-jockey-one inline-block w-full md:w-auto"
+          >
+            Register Now
+          </a>
         </div>
         
         <div className="text-center mb-6">
