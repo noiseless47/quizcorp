@@ -37,7 +37,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     id: 4,
-    name: "Ksheeraja",
+    name: "Ksheeraja Adya",
     role: "Design Head",
     image: "/team/design-head.jpg",
     description: "Crafting visual experiences and brand identity.",
