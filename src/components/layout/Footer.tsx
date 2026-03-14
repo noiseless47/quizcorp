@@ -21,6 +21,12 @@ export default function Footer() {
     { name: "About Us", href: "/about" },
   ];
 
+  const sponsors = [
+    { name: "Rajhans", logo: "/sponsor/rajhans-logo.png", href: "/sponsorship" },
+    { name: "Jamboree", logo: "/sponsor/Jamboree-logo.png", href: "/sponsorship" },
+    { name: "FES", logo: "/sponsor/fes-logo.png", href: "/sponsorship" },
+  ];
+
   const socialLinks = [
     { icon: <FaInstagram />, href: "https://www.instagram.com/rvquizcorp/", color: "hover:bg-[#E1306C]" },
     { icon: <FaFacebook />, href: "https://www.facebook.com/RvQuizcorp/", color: "hover:bg-[#1877F2]" },
@@ -95,7 +101,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center group">
                 <FaPhone className="text-[#f36d21] mr-4 text-xl flex-shrink-0" />
-                <a href="tel:+919448417237" className="text-gray-400 hover:text-white transition-colors text-lg gabarito-regular">+91 94484 17237</a>
+                <a href="tel:+919632361789" className="text-gray-400 hover:text-white transition-colors text-lg gabarito-regular">+91 96323 61789</a>
               </li>
             </ul>
           </div>
@@ -112,6 +118,26 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+
+        <div className="mb-16 rounded-[28px] bg-[#f7f3eb] px-6 py-8 md:px-10">
+          <div className="mb-8 text-center">
+            <span className="text-xs font-bold uppercase tracking-[0.35em] text-[#6b6256] gabarito-bold">Our Sponsors</span>
+          </div>
+
+          <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-3">
+            {sponsors.map((sponsor, index) => (
+              <div key={sponsor.name} className="flex flex-col items-center justify-center px-6 py-4 text-center">
+                <Link to={sponsor.href} aria-label={`${sponsor.name} sponsor link`} className="inline-flex items-center justify-center transition-opacity duration-300 hover:opacity-85">
+                  <img
+                    src={sponsor.logo}
+                    alt={`${sponsor.name} logo`}
+                    className={`w-auto max-w-full object-contain brightness-110 ${index === 1 ? "max-h-20" : "max-h-44"}`}
+                  />
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
 

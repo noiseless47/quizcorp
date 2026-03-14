@@ -94,10 +94,10 @@ export default function Team() {
                   {/* Real image would be here */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0B1121] via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
 
-                  <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                    <span className="text-[#f36d21] text-xs font-bold uppercase tracking-widest mb-2 block">{member.role}</span>
-                    <h3 className="text-2xl font-bold text-white gabarito-bold mb-2">{member.name}</h3>
-                    <p className="text-gray-400 text-sm gabarito-regular opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <span className="text-[#f36d21] text-xs font-bold uppercase tracking-widest mb-1 block">{member.role}</span>
+                    <h3 className="text-xl font-bold text-white gabarito-bold mb-2">{member.name}</h3>
+                    <p className="text-gray-400 text-sm gabarito-regular opacity-0 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-20 transition-all duration-700 ease-in-out">
                       {member.description}
                     </p>
                   </div>

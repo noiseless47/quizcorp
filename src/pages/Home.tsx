@@ -5,6 +5,23 @@ import { useInstagramFeed } from "../hooks/useInstagramFeed";
 
 export default function Home() {
   const { posts, loading } = useInstagramFeed();
+  const announcements = [
+    {
+      color: "bg-[#f36d21]",
+      text: "Most Recent UTPT: May 23-25, 2025.",
+      linkText: "See highlights.",
+      to: "/archives"
+    },
+    { color: "bg-[#4c8693]", text: "UTPT 2026 coming soon" },
+    { color: "bg-[#f36d21]", text: "Set Dose 2026 coming soon" },
+    {
+      color: "bg-[#4c8693]",
+      text: "Admin Batch 2026-27 has been announced.",
+      linkText: "Check the Corp page for more details.",
+      to: "/team"
+    },
+  ];
+
   // ... rest of the component
   // Placeholder images for carousel - user will add real photos later
   const carouselImages = [
@@ -109,25 +126,28 @@ export default function Home() {
 
       {/* Aesthetic Announcement Ticker - Updated with 2026 dates */}
       <div className="w-full bg-[#0B1121] border-y border-white/10 py-4 overflow-hidden relative z-30">
-        <div className="whitespace-nowrap animate-marquee flex items-center">
-          {[...Array(3)].map((_, i) => (
-            <div key={i} className="flex items-center text-gray-400 font-medium text-base tracking-widest uppercase gabarito-regular">
-              <span className="mx-12 flex items-center gap-3 text-white/50">
-                <span className="w-2 h-2 rounded-full bg-[#f36d21]"></span>
-                Most Recent UTPT: May 23-25, 2025
-              </span>
-              <span className="mx-12 flex items-center gap-3">
-                <span className="w-2 h-2 rounded-full bg-[#4c8693]"></span>
-                UTPT 2026 coming soon
-              </span>
-              <span className="mx-12 flex items-center gap-3">
-                <span className="w-2 h-2 rounded-full bg-white/20"></span>
-                Set Dose 2026 coming soon
-              </span>
-              <span className="mx-12 flex items-center gap-3">
-                <span className="w-2 h-2 rounded-full bg-white/20"></span>
-                Admin Batch 2026-27 has been announced. Check our page for more details.
-              </span>
+        <div className="announcement-ticker animate-marquee flex w-max items-center whitespace-nowrap">
+          {[0, 1].map((copyIndex) => (
+            <div
+              key={copyIndex}
+              aria-hidden={copyIndex === 1}
+              className="flex min-w-max shrink-0 items-center text-base font-medium tracking-widest text-gray-400 uppercase gabarito-regular"
+            >
+              {announcements.map((announcement) => (
+                <span key={`${copyIndex}-${announcement.text}`} className="mx-12 flex items-center gap-3">
+                  <span className={`h-2 w-2 rounded-full ${announcement.color}`}></span>
+                  {announcement.text}
+                  {announcement.to ? (
+                    copyIndex === 0 ? (
+                      <Link to={announcement.to} className="text-[#88d5e5] underline underline-offset-4 hover:text-white transition-colors">
+                        {announcement.linkText}
+                      </Link>
+                    ) : (
+                      <span>{announcement.linkText}</span>
+                    )
+                  ) : null}
+                </span>
+              ))}
             </div>
           ))}
         </div>

@@ -19,8 +19,8 @@ export default function Contact() {
     {
       icon: <FaPhone className="text-2xl" />,
       title: "Phone",
-      details: "+91 94484 17237 / +91 82960 32694",
-      link: "tel:+919448417237",
+      details: "+91 96323 61789 / +91 86602 51694",
+      link: "tel:+919632361789",
       accent: "#4c8693"
     },
     {
