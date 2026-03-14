@@ -283,9 +283,8 @@ export default function Home() {
                 </motion.div>
               ))
             ) : (
-              // Empty State / Fallback when no API data
-              <div className="col-span-full py-20 text-center rounded-[32px] border border-dashed border-white/10 bg-white/5">
-                <p className="text-gray-500 gabarito-regular">Connect your Instagram Graph API in .env to see live posts.</p>
+              <div className="col-span-full py-8 text-center">
+                <p className="text-gray-500 gabarito-regular">Fresh posts will appear here soon. Follow us on Instagram for the latest updates.</p>
               </div>
             )}
           </div>
