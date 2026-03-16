@@ -8,6 +8,7 @@ import Sponsorship from '@/pages/Sponsorship';
 import About from '@/pages/About';
 import Contact from '@/pages/Contact';
 import Archives from '@/pages/Archives';
+import EventDetail from '@/pages/EventDetail';
 import Gallery from '@/pages/Gallery';
 import Team from '@/pages/Team';
 import Register from '@/pages/Register';
@@ -30,6 +31,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/archives" element={<Archives />} />
+            <Route path="/event/:eventName" element={<EventDetail />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/team" element={<Team />} />
             <Route path="/register" element={<Register />} />

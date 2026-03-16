@@ -303,8 +303,14 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div className="motion-slide-in">
-              <div className="rounded-xl shadow-lg w-full aspect-video bg-gray-800 flex items-center justify-center border border-white/5">
-                <span className="text-white/20">About Image Placeholder</span>
+              <div className="rounded-xl shadow-lg w-full aspect-video bg-gray-800 flex items-center justify-center border border-white/5 overflow-hidden">
+                <img
+                  src={"/UTPT24/All.jpg"}
+                  alt="UTPT 2024 Group Photo"
+                  className="object-cover w-full h-full"
+                  style={{ objectPosition: 'center' }}
+                  loading="lazy"
+                />
               </div>
             </div>
             <div className="motion-slide-in">

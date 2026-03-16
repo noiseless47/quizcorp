@@ -27,21 +27,39 @@ export default function Archives() {
       events: [
         {
           year: 2026,
-          title: "UTPT 2026: The Future",
-          description: "Preparations are underway for the 21st edition, promising an unprecedented fusion of tradition and technology.",
-          image: "/archives/utpt26.jpg",
+          title: "Saarang Fest 2026 (IIT Madras)",
+          description: "QuizCorp's participation in Saarang, the prestigious festival of IIT Madras, bringing excellence to a national platform.",
+          image: "/archives/saarang26.jpg",
         }
       ],
-      highlights: ["Strategic roadmap for global expansion", "Innovation in digital quizzing platforms"]
+      highlights: ["National-level participation", "Showcasing QuizCorp excellence"]
     },
     {
       year: 2025,
       events: [
         {
           year: 2025,
-          title: "UTPT 2025: May 23-25",
+          title: "Under The Peepal Tree 2025",
           description: "Setting the stage for our 20th anniversary celebration. Expect legacy quizzes and modern challenges across three intensive days.",
           image: "/archives/utpt25.jpg",
+        },
+        {
+          year: 2025,
+          title: "Set Dose 2025",
+          description: "A specialized quiz event bringing fresh perspectives and competitive spirit to the quizzing calendar.",
+          image: "/archives/setdose25.jpg",
+        },
+        {
+          year: 2025,
+          title: "Interrobang Fest 2025 (NALSAR University)",
+          description: "QuizCorp's presence at Interrobang Fest 2025, hosted by NALSAR University, showcasing our commitment to quizzing excellence on a national stage.",
+          image: "/archives/interrobang25.jpg",
+        },
+        {
+          year: 2025,
+          title: "Freshers Quiz 2025",
+          description: "An exciting introduction to competitive quizzing for first-year students, nurturing the next generation of quiz enthusiasts.",
+          image: "/archives/freshers25.jpg",
         }
       ],
       highlights: ["Opening registrations for 1200+ teams", "Curating special celebrity guest quizzes"]
@@ -51,7 +69,13 @@ export default function Archives() {
       events: [
         {
           year: 2024,
-          title: "UTPT 2024",
+          title: "Waves Fest 2024 (BITS Goa)",
+          description: "QuizCorp participated in the prestigious BITS Goa Waves Fest 2024, showcasing quizzing excellence on a national stage.",
+          image: "/BITS24/All.jpg"
+        },
+        {
+          year: 2024,
+          title: "Under The Peepal Tree 2024",
           description: "The 19th edition of Under The Peepal Tree featured over 800 participants from across India, with 6 specialized quiz categories.",
           image: "/archives/utpt24.jpg",
           winners: ["Team Quizzical Minds (Major Quiz)", "Team BrainStorm (Indi-Genius)"]
@@ -61,6 +85,12 @@ export default function Archives() {
           title: "RVPU Quiz 2024",
           description: "An intellectually stimulating quiz competition for PU students, fostering curiosity among young minds.",
           image: "/archives/rvpu24.jpg"
+        },
+        {
+          year: 2024,
+          title: "Freshers Quiz 2024",
+          description: "An exciting introduction to competitive quizzing for first-year students, nurturing the next generation of quiz enthusiasts.",
+          image: "/archives/freshers24.jpg",
         }
       ],
       highlights: [
@@ -73,9 +103,15 @@ export default function Archives() {
       events: [
         {
           year: 2023,
-          title: "UTPT 2023",
-          description: "A grand celebration of knowledge with participants from across the subcontinent.",
+          title: "Under The Peepal Tree 2023",
+          description: "The 18th edition of Under The Peepal Tree featured over 800 participants from across India, with 6 specialized quiz categories.",
           image: "/archives/utpt2023.jpg"
+        },
+        {
+          year: 2023,
+          title: "Freshers Quiz 2023",
+          description: "An exciting introduction to competitive quizzing for first-year students, nurturing the next generation of quiz enthusiasts.",
+          image: "/archives/freshers23.jpg",
         }
       ],
       highlights: [
@@ -171,31 +207,38 @@ export default function Archives() {
                 {currentYearData.events.map((event, index) => (
                   <div
                     key={index}
-                    className="group bg-white/5 rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-300"
+                    className="group relative rounded-2xl overflow-hidden transition-all duration-500"
                   >
-                    <div className="aspect-video bg-gray-800 flex items-center justify-center relative overflow-hidden">
-                       <span className="text-white/10 text-2xl font-bold">{event.title} Image Placeholder</span>
-                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                       <div className="absolute bottom-6 left-6">
-                          <h3 className="text-2xl font-bold text-white gabarito-bold">{event.title}</h3>
-                       </div>
-                    </div>
-                    <div className="p-8">
-                      <p className="text-gray-300 mb-6 gabarito-regular text-lg leading-relaxed">
-                        {event.description}
-                      </p>
-                      {event.winners && (
-                        <div>
-                          <h4 className="text-[#f36d21] font-bold mb-4 gabarito-bold uppercase tracking-wider text-sm">Winning Teams</h4>
-                          <div className="flex flex-wrap gap-3">
-                            {event.winners.map((winner, idx) => (
-                              <span key={idx} className="bg-[#f36d21]/10 text-[#f36d21] px-4 py-1 rounded-full text-sm font-medium border border-[#f36d21]/20">
-                                {winner}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
+                    {/* Gradient Border Background */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#88d5e5]/30 via-[#4c8693]/20 to-[#88d5e5]/30 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm -z-10 group-hover:blur-lg" />
+                    
+                    {/* Main Card */}
+                    <div className="relative bg-white/5 rounded-2xl overflow-hidden border-2 border-white/10 group-hover:border-[#88d5e5]/60 transition-all duration-500 shadow-xl group-hover:shadow-[0_0_30px_rgba(136,213,229,0.15)]">
+                      <div className="aspect-video bg-gray-800 flex items-center justify-center relative overflow-hidden">
+                      {event.image ? (
+                        <img
+                          src={event.image}
+                          alt={event.title}
+                          className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+                          style={{ objectPosition: 'center' }}
+                          loading="lazy"
+                        />
+                      ) : (
+                        <span className="text-white/10 text-2xl font-bold">{event.title} Image Placeholder</span>
                       )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                      <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between z-10">
+                        <h3 className="text-2xl font-bold text-white gabarito-bold">{event.title}</h3>
+                        <Link 
+                          to={`/event/${encodeURIComponent(event.title)}`}
+                          onClick={() => sessionStorage.setItem('currentEvent', JSON.stringify(event))}
+                          className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[#88d5e5]/20 hover:bg-[#88d5e5]/40 backdrop-blur-sm text-[#88d5e5] px-4 py-2 rounded-full text-sm font-bold gabarito-bold border border-[#88d5e5]/40 whitespace-nowrap"
+                        >
+                          Know More
+                        </Link>
+                      </div>
+                      </div>
+                      <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-[#88d5e5] to-transparent w-0 group-hover:w-full transition-all duration-500"></div>
                     </div>
                   </div>
                 ))}
