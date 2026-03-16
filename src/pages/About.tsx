@@ -16,8 +16,8 @@ export default function About() {
 
   const stats = [
     { label: "Community", value: "10K+" },
-    { label: "Legacy", value: "25+ Yrs" },
-    { label: "Events", value: "50+ / Yr" }
+    { label: "Legacy", value: "25+ Years" },
+    { label: "Events", value: "50+" }
   ];
 
   return (
